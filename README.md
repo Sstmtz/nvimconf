@@ -1,5 +1,6 @@
 
 ## Neovim 配置目录树
+<p>   我的neovim配置结构如下:</p>
 ```
 nvim/
 ├─ .stylua.toml
