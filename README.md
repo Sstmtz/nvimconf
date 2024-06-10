@@ -1,3 +1,6 @@
+## Instruction 介绍
+&emsp;&emsp;这是我个人日常编写代码使用的Neovim配置。
+
 ## Neovim 配置目录树
 <p>   我的neovim配置结构如下:</p>
 
@@ -15,8 +18,6 @@ nvim/
       ├─ other/             # 其他插件
       └─ tools/             # 内置工具插件
 ```
-## Instruction 介绍
-&emsp;&emsp;这是我个人日常编写代码使用的Neovim配置。
 
 ## Plugins list 插件列表
 &emsp;&emsp;安装的插件存放在plugins目录下,&emsp;并根据它们的用途进行简单的分类。<br>
