@@ -51,3 +51,4 @@ git clone https://github.com/STMT017/Neovim-Config ~/.config/nvim && nvim
 ```
 
 ## ⚙️ Configuration 配置
+&emsp;&emsp;确保你熟悉lua的用法和了解本项目结构, 那么你可以在此基础上进行自定义配置。
