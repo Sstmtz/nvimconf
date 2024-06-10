@@ -19,7 +19,8 @@ nvim/
 <p>&emsp;&emsp;这是我个人日常编写代码使用的Neovim配置。</p>
 
 ## Plugins list 插件列表
-&emsp;&emsp;安装的插件存放在plugins目录下,&emsp;并根据它们的用途进行简单的分类,&emsp;目前分为 __core(核心插件)__, __other(其他插件)__ 和 __tools(内置工具插件)__。
+&emsp;&emsp;安装的插件存放在plugins目录下,&emsp;并根据它们的用途进行简单的分类。\n
+目前分为 __core(核心插件)__, __other(其他插件)__ 和 __tools(内置工具插件)__。
 
 - core
    - 代码补全:&emsp;nvim-cmp
@@ -37,7 +38,7 @@ nvim/
    - lazygit   
    - yazi      
 
-## 📦 Installation
+## 📦 Installation 安装
 <p>&emsp;&emsp;注意:&emsp;请确保在安装之前先备份你先前的neovim配置（这是一种好的习惯）。</p>
 <p>&emsp;&emsp;安装的具体步骤可参考下面的命令执行:)。</p>
 
