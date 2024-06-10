@@ -20,7 +20,7 @@ nvim/
 
 ## Plugins list 插件列表
 &emsp;&emsp;安装的插件存放在plugins目录下,&emsp;并根据它们的用途进行简单的分类。<br>
-目前分为 __core(核心插件)__, __other(其他插件)__ 和 __tools(内置工具插件)__。
+&emsp;&emsp;目前分为 __core(核心插件)__, __other(其他插件)__ 和 __tools(内置工具插件)__。
 
 - core
    - 代码补全:&emsp;nvim-cmp
