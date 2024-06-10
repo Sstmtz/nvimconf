@@ -1,6 +1,6 @@
 ## Instruction 介绍
 &emsp;&emsp;这是我个人日常编写代码使用的Neovim配置。<br>
-&emsp;&emsp;它是在NvChad基础上进行自定义配置后得到的,&emsp;成功地继承了NvChad精美的UI设计和极快的启动速度,&emsp;同时在此基础上剔除了部分配置,&emsp;使得个人可定制化程度更高。 
+&emsp;&emsp;这是在NvChad配置的基础上进行自定义配置后得到的。成功地继承了NvChad精美的UI设计和极快的启动速度,&emsp;同时在此基础上剔除了部分配置,&emsp;使得个人可定制化程度更高。 
 
 ## Neovim 配置目录树
 &emsp;&emsp;我的neovim配置结构如下:
