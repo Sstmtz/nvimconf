@@ -1,4 +1,4 @@
-
+```txt
 nvim配置目录树结构
 .
 |—— init.lua
@@ -11,3 +11,4 @@ nvim配置目录树结构
           |—— core/
           |—— others/
           |—— tools/
+```
