@@ -30,7 +30,7 @@ nvim/
 
 ## 📋 Plugins list 插件列表
 
-&emsp;&emsp;安装的插件存放在plugins目录下,&emsp;并根据它们的用途进行简单的分类。<br>
+&emsp;&emsp;安装的插件大部分存放在plugins目录下,并进行简单的分类。一部分ui插件安装来自[NvChad/ui](https://github.com/NvChad/NvChad/blob/v2.5/lua/nvchad/plugins/ui.lua)。&emsp;<br>
 &emsp;&emsp;目前分为 **核心插件(core)**, **其他插件(others)** 和 **工具插件(tools)**。
 
 - core
