@@ -30,7 +30,8 @@ nvim/
    - LSP:&emsp;nvim-lspconfig
    - LSP托管:&emsp;mason,&emsp;mason-lspconfig,&emsp;none-ls
    - 文本高亮:&emsp;nvim-treesitter
-   - 图标显示: &emsp;nvim-web-devicons,&emsp;gitsigns
+   - 图标显示:&emsp;nvim-web-devicons,&emsp;gitsigns
+   - UI美化:&emsp;nvim-tree,&emsp;nvim-telescope
 - other
    - 注释:&emsp;Comment 
    - 输入框美化:&emsp;dressing 
