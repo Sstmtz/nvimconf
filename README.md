@@ -17,11 +17,9 @@ nvim/
 ```
 
 ## 🔌 Installation
-<p>&emsp;&emsp;请确保在安装之前先备份你先前的neovim配置（这是一种好的习惯），之后克隆安装完毕后，输入nvim后会等待它自动安装后便可以使用了:)。</p>
-<p>&emsp;&emsp;可参考下面的命令执行</p>
+<p>&emsp;&emsp;请确保在安装之前先备份你先前的neovim配置（这是一种好的习惯），之后克隆安装完毕后，输入nvim后会等待它自动安装后便可以使用了:)。可参考下面的命令执行</p>
 
 ```git
 mv ~/.config/nvim ~/.config/nvim-backup                                                  
-git clone https://github.com/STMT017/Neovim-Config ~/.config/nvim       
-nvim                                                                       
+git clone https://github.com/STMT017/Neovim-Config ~/.config/nvim && nvim                                                                       
 ```
