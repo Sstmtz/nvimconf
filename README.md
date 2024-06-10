@@ -1,5 +1,5 @@
 ## 📚️ Instruction 介绍
-&emsp;&emsp;个人日常编写代码使用的Neovim配置,&emsp;由[NvChad](https://github.com/NvChad/NvChad)配置修改而来。<br>
+&emsp;&emsp;个人日常编写代码使用的Neovim配置，由[NvChad](https://github.com/NvChad/NvChad)配置修改而来。<br>
 
 ## ✨ Features 特征
 
