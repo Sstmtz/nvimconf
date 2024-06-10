@@ -18,7 +18,7 @@ nvim/
 
 ## 🔌 Installation
 <p>&emsp;&emsp;注意:&emsp;请确保在安装之前先备份你先前的neovim配置（这是一种好的习惯）。</p>
-<p>&emsp;&emsp;克隆安装完毕后输入nvim后,等待它自动安装后便可以使用了。具体步骤可参考下面的命令执行:)。</p>
+<p>&emsp;&emsp;通过克隆安装完毕后,输入nvim,等待它自动完毕后重新打开nvim即可开始使用啦!!!具体步骤可参考下面的命令执行:)。</p>
 
 ```git
 mv ~/.config/nvim ~/.config/nvim-backup                                                  
