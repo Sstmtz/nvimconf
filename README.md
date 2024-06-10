@@ -1,6 +1,6 @@
-```
-nvim 配置目录树
 
+## Neovim 配置目录树
+```
 nvim/
 ├─ .stylua.toml
 ├─ init.lua
