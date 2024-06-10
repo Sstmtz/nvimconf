@@ -1,4 +1,5 @@
 ## 📚️ Instruction 介绍
+
 &emsp;&emsp;个人日常编写代码使用的Neovim配置，由[NvChad](https://github.com/NvChad/NvChad)配置修改而来。<br>
 
 ## ✨ Features 特征
@@ -9,6 +10,7 @@
 - 提供更好的代码编写体验。
 
 ## 🌲 Neovim 配置目录树
+
 &emsp;&emsp;我的neovim配置结构如下:
 
 ```
@@ -27,38 +29,41 @@ nvim/
 ```
 
 ## 📋 Plugins list 插件列表
+
 &emsp;&emsp;安装的插件存放在plugins目录下,&emsp;并根据它们的用途进行简单的分类。<br>
-&emsp;&emsp;目前分为 __核心插件(core)__, __其他插件(others)__ 和 __工具插件(tools)__。
+&emsp;&emsp;目前分为 **核心插件(core)**, **其他插件(others)** 和 **工具插件(tools)**。
 
 - core
-   - 代码补全:&emsp;nvim-cmp
-   - 代码诊断:&emsp;nvim-lint
-   - 代码格式化:&emsp;conform
-   - LSP:&emsp;nvim-lspconfig
-   - LSP托管:&emsp;mason,&emsp;mason-lspconfig,&emsp;none-ls
-   - 文本高亮:&emsp;nvim-treesitter
-   - 图标显示:&emsp;nvim-web-devicons,&emsp;gitsigns
-   - UI美化:&emsp;nvim-tree,&emsp;nvim-telescope
-   - ......
+  - 代码补全:&emsp;nvim-cmp
+  - 代码诊断:&emsp;nvim-lint
+  - 代码格式化:&emsp;conform
+  - LSP:&emsp;nvim-lspconfig
+  - LSP托管:&emsp;mason,&emsp;mason-lspconfig,&emsp;none-ls
+  - 文本高亮:&emsp;nvim-treesitter
+  - 图标显示:&emsp;nvim-web-devicons,&emsp;gitsigns
+  - UI美化:&emsp;nvim-tree,&emsp;nvim-telescope
+  - ......
 - other
-   - 注释:&emsp;Comment 
-   - 输入框美化:&emsp;dressing 
-   - 括号匹配:&emsp;surround
-   - 代码诊断定位:&emsp;trouble
-   - ......
+  - 注释:&emsp;Comment
+  - 输入框美化:&emsp;dressing
+  - 括号匹配:&emsp;surround
+  - 代码诊断定位:&emsp;trouble
+  - ......
 - tools
-   - lazygit   
-   - yazi
-   - ......
+  - lazygit
+  - yazi
+  - ......
 
 ## 📦 Installation 安装
-&emsp;&emsp;__⚠️注意：请确保在安装之前先备份你先前的neovim配置（这是一种好的习惯）。__ <br>
+
+&emsp;&emsp;**⚠️注意：请确保在安装之前先备份你先前的neovim配置（这是一种好的习惯）。** <br>
 &emsp;&emsp;安装的具体步骤可参考下面的命令执行:)。
 
 ```git
-mv ~/.config/nvim ~/.config/nvim-backup                                                  
-git clone https://github.com/STMT017/Neovim-Config ~/.config/nvim && nvim                                                                       
+mv ~/.config/nvim ~/.config/nvim-backup
+git clone https://github.com/STMT017/Neovim-Config ~/.config/nvim && nvim
 ```
 
 ## ⚙️ Configuration 配置
+
 &emsp;&emsp;确保你熟悉lua的用法和了解本项目结构, 那么你可以在此基础上进行自定义配置。
