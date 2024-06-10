@@ -2,7 +2,7 @@
 &emsp;&emsp;这是我个人日常编写代码使用的Neovim配置。
 
 ## Neovim 配置目录树
-<p>   我的neovim配置结构如下:</p>
+&emsp;&emsp;我的neovim配置结构如下:
 
 ```
 nvim/
