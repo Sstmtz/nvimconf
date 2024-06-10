@@ -20,19 +20,19 @@ nvim/
 
 ## Plugins list 插件列表
 <p>我将安装的插件放在plugins目录下,&emsp;并根据它们的用途进行简单的分类,目前分为core(核心插件),&emsp;other(其他插件),&emsp;tools(内置工具插件)。</p>
-- core
+>- core
    - 代码补全:&emsp;nvim-cmp
    - 代码诊断:&emsp;nvim-lint
    - 代码格式化:&emsp;conform
    - LSP:&emsp;nvim-lspconfig
    - LSP托管:&emsp;mason,&emsp;mason-lspconfig,&emsp;none-ls
    - 文本高亮:&emsp;nvim-treesitter
-- other
+>- other
    - 注释:&emsp;Comment 
    - 输入框美化:&emsp;dressing 
    - 括号匹配:&emsp;surround
    - 代码诊断:&emsp;trouble
-- tools
+>- tools
    - lazygit   
    - yazi      
 
