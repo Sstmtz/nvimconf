@@ -1,3 +1,11 @@
+## Install
+<p>   如何安装?</p>
+
+```sh
+mv ~/.config/nvim ~/.config/nvim-backup                                 # 备份你自己的neovim配置                
+git clone https://github.com/STMT017/Neovim-Config ~/.config/nvim       # 克隆到你nvim配置目录下
+nvim  
+```
 
 ## Neovim 配置目录树
 <p>   我的neovim配置结构如下:</p>
