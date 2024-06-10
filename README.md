@@ -19,7 +19,7 @@ nvim/
 <p>&emsp;&emsp;这是我个人日常编写代码使用的Neovim配置。</p>
 
 ## Plugins list 插件列表
-<p>我将安装的插件放在plugins目录下,&emsp;并根据它们的用途进行简单的分类,目前分为core(核心插件),&emsp;other(其他插件),&emsp;tools(内置工具插件)。</p>
+<p>&emsp;&emsp;我将安装的插件存放在plugins目录下,&emsp;并根据它们的用途进行简单的分类,目前分为*core(核心插件)*,&emsp;*other(其他插件)*和&emsp;*tools(内置工具插件)*。</p>
 
 - core
    - 代码补全:&emsp;nvim-cmp
