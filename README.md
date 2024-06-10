@@ -15,12 +15,34 @@ nvim/
       ├─ other/             # 其他插件
       └─ tools/             # 内置工具插件
 ```
+## Instruction 介绍
+<p>&emsp;&emsp;这是我个人日常编写代码使用的Neovim配置。</p>
 
-## 🔌 Installation
+## Plugins list 插件列表
+<p>我将安装的插件放在plugins目录下,&emsp;并根据它们的用途进行简单的分类,目前分为core(核心插件),&emsp;other(其他插件),&emsp;tools(内置工具插件)。</p>
+- core
+   - 代码补全:&emsp;nvim-cmp
+   - 代码诊断:&emsp;nvim-lint
+   - 代码格式化:&emsp;conform
+   - LSP:&emsp;nvim-lspconfig
+   - LSP托管:&emsp;mason,&emsp;mason-lspconfig,&emsp;none-ls
+   - 文本高亮:&emsp;nvim-treesitter
+- other
+   - 注释:&emsp;Comment 
+   - 输入框美化:&emsp;dressing 
+   - 括号匹配:&emsp;surround
+   - 代码诊断:&emsp;trouble
+- tools
+   - lazygit   
+   - yazi      
+
+## 📦 Installation
 <p>&emsp;&emsp;注意:&emsp;请确保在安装之前先备份你先前的neovim配置（这是一种好的习惯）。</p>
-<p>&emsp;&emsp;通过克隆安装完毕后,输入nvim,等待它自动完毕后重新打开nvim即可开始使用啦!!!具体步骤可参考下面的命令执行:)。</p>
+<p>&emsp;&emsp;安装的具体步骤可参考下面的命令执行:)。</p>
 
 ```git
 mv ~/.config/nvim ~/.config/nvim-backup                                                  
 git clone https://github.com/STMT017/Neovim-Config ~/.config/nvim && nvim                                                                       
 ```
+
+## ⚙️ Configuration 配置
