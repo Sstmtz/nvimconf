@@ -52,7 +52,7 @@ nvim/
    - ......
 
 ## 📦 Installation 安装
-&emsp;&emsp;__注意__:&emsp;请确保在安装之前先备份你先前的neovim配置（这是一种好的习惯）。<br>
+&emsp;&emsp;__注意__ ：请确保在安装之前先备份你先前的neovim配置（这是一种好的习惯）。<br>
 &emsp;&emsp;安装的具体步骤可参考下面的命令执行:)。
 
 ```git
