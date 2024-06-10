@@ -29,14 +29,15 @@ nvim/
    - LSP:&emsp;nvim-lspconfig
    - LSP托管:&emsp;mason,&emsp;mason-lspconfig,&emsp;none-ls
    - 文本高亮:&emsp;nvim-treesitter
+   - 图标显示: &emsp;nvim-web-devicons,&emsp;gitsigns
 - other
    - 注释:&emsp;Comment 
    - 输入框美化:&emsp;dressing 
    - 括号匹配:&emsp;surround
-   - 代码诊断:&emsp;trouble
+   - 代码诊断定位:&emsp;trouble
 - tools
    - lazygit   
-   - yazi      
+   - yazi
 
 ## 📦 Installation 安装
 &emsp;&emsp;注意:&emsp;请确保在安装之前先备份你先前的neovim配置（这是一种好的习惯）。<br>
