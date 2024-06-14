@@ -53,6 +53,7 @@ local options = {
     "themes",
     "terms",
     --[["rest"--]]
+    "noice",
   },
 
   extensions = {},
