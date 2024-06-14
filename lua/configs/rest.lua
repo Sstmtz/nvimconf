@@ -1,3 +1,3 @@
-local rest = require "rest"
+local rest = require "rest-nvim"
 
 rest.setup {}
