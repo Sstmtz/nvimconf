@@ -78,6 +78,15 @@ return {
       end,
       capabilities = capabilities,
       filetypes = { "c", "cpp", "objc", "objcpp", "cuda", "proto" },
+      root_dir = util.root_pattern(
+        ".clangd",
+        ".clang-tidy",
+        ".clang-format",
+        "compile_commands.json",
+        "compile_flags.txt",
+        "configure.ac",
+        ".git"
+      ),
     }
 
     -- ccls
@@ -86,6 +95,7 @@ return {
       capabilities = capabilities,
       filetypes = { "c", "cpp", "objc", "objcpp", "cuda" },
       offset_encoding = "utf-32",
+      root_dir = util.root_pattern("compile_commands.json", ".ccls", ".git"),
       init_options = {
         compilationDatabaseDirectory = "build",
         index = {
@@ -93,6 +103,9 @@ return {
         },
         clang = {
           excludeArgs = { "-frounding-math" },
+        },
+        cache = {
+          directory = ".ccls-cache",
         },
       },
     }
