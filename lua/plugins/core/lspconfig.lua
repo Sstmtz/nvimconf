@@ -77,6 +77,15 @@ return {
         on_attach(client, bufnr)
       end,
       capabilities = capabilities,
+      filetypes = { "c", "cpp", "objc", "objcpp", "cuda", "proto" },
+    }
+
+    -- ccls
+    lspconfig.ccls.setup {
+      on_attach = on_attach,
+      capabilities = capabilities,
+      filetypes = { "c", "cpp", "objc", "objcpp", "cuda" },
+      offset_encoding = "utf-32",
     }
 
     -- gopls
