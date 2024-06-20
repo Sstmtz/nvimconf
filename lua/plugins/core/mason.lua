@@ -33,6 +33,7 @@ return {
 
   {
     "williamboman/mason-lspconfig.nvim",
+    lazy = false,
     config = function()
       require "configs.mason-lspconfig"
     end,
@@ -40,6 +41,7 @@ return {
 
   {
     "WhoIsSethDaniel/mason-tool-installer.nvim",
+    lazy = false,
     config = function()
       require "configs.mason-tool-installer"
     end,
