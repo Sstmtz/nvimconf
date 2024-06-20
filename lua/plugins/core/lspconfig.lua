@@ -17,7 +17,7 @@ return {
       "cssls",
       -- "clangd",
       "eslint",
-      "pyright",
+      -- "pyright",
       "ruff_lsp",
       -- "tsserver",
       -- "gopls",

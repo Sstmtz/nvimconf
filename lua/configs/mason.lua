@@ -14,9 +14,9 @@ local options = {
 
     -- "isort", -- python formatter
     -- "black", -- python formatter
-    "debugpy",   -- python dap
+    "debugpy", -- python dap
     -- "mypy",      -- python linter
-    "pyright",   -- python lsp
+    -- "pyright",   -- python lsp
     "ruff-lsp",  -- python lsp
 
     "gopls",     -- go lsp
