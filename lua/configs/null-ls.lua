@@ -29,34 +29,34 @@ local opts = {
     -- null_ls.builtins.formatting.gofumpt,
     -- null_ls.builtins.formatting.goimports,
     -- null_ls.builtins.formatting.golines,
-    completion.spell,
+    -- completion.spell,
     -- sh fmt
-    formatting.shfmt,
+    -- formatting.shfmt,
     -- stylua
-    formatting.stylua,
+    -- formatting.stylua,
     -- go fmt
-    formatting.goimports,
+    -- formatting.goimports,
     -- html/css/js/ts/vue/react/... fmt
-    formatting.prettier.with {
-      filetypes = {
-        "javascript",
-        "javascriptreact",
-        "typescript",
-        "typescriptreact",
-        "vue",
-        "css",
-        "scss",
-        "less",
-        "html",
-        "json",
-        "yaml",
-        "graphql",
-        "astro",
-        "markdown",
-      },
-      extra_filetypes = { "njk" },
-      prefer_local = "node_modules/.bin",
-    },
+    --   formatting.prettier.with {
+    --     filetypes = {
+    --       "javascript",
+    --       "javascriptreact",
+    --       "typescript",
+    --       "typescriptreact",
+    --       "vue",
+    --       "css",
+    --       "scss",
+    --       "less",
+    --       "html",
+    --       "json",
+    --       "yaml",
+    --       "graphql",
+    --       "astro",
+    --       "markdown",
+    --     },
+    --     extra_filetypes = { "njk" },
+    --     prefer_local = "node_modules/.bin",
+    --   },
   },
 
   on_attach = function(client, bufnr)
