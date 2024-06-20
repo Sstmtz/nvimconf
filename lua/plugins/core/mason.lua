@@ -3,9 +3,6 @@ return {
   {
     "williamboman/mason.nvim",
     cmd = { "Mason", "MasonInstall", "MasonInstallAll", "MasonUpdate" },
-    dependencies = {
-      "WhoIsSethDaniel/mason-tool-installer.nvim",
-    },
     opts = function()
       return require "configs.mason"
     end,
@@ -31,19 +28,6 @@ return {
       end, {})
 
       vim.g.mason_binaries_list = opts.ensure_installed
-
-      local mason_tool_installer = require "mason-tool-installer"
-
-      mason_tool_installer.setup {
-        ensure_installed = {
-          -- "eslint_d",  -- eslint linter
-          "isort",     -- python formatter
-          -- "pylint",   -- python linter
-          "stylua",    -- lua formatter
-          "prettier",  -- Prettier formatter (几乎支持前端所有的文件格式)
-          "prettierd", -- prettier formatter
-        },
-      }
     end,
   },
 
@@ -51,6 +35,32 @@ return {
     "williamboman/mason-lspconfig.nvim",
     config = function()
       require "configs.mason-lspconfig"
+    end,
+  },
+
+  {
+    "WhoIsSethDaniel/mason-tool-installer.nvim",
+    config = function()
+      require "configs.mason-tool-installer"
+    end,
+  },
+
+  {
+    "jay-babu/mason-null-ls.nvim",
+    event = { "BufReadPre", "BufNewFile" },
+    dependencies = {
+      "williamboman/mason.nvim",
+      "nvimtools/none-ls.nvim",
+    },
+    config = function()
+      require "configs.null-ls" -- require your null-ls config here (example below)
+    end,
+  },
+
+  {
+    "jay-babu/mason-nvim-dap.nvim",
+    config = function()
+      require "configs.mason-nvim-dap"
     end,
   },
 }

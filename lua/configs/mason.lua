@@ -3,14 +3,14 @@ local options = {
     -- "lua-language-server",        -- lua lsp
 
     -- "typescript-language-server", -- javascript/typescript lsp
-    "js-debug-adapter",            -- javascript dap
+    -- "js-debug-adapter",            -- javascript dap
     -- "eslint-lsp",                 -- eslint lsp
     "tailwindcss-language-server", -- css lsp
 
     -- "cpplint",   -- c/cpp linter
     -- "clangd",       -- c/cpp lsp
     "clang-format", -- c/cpp formatter
-    "codelldb",     -- c/cpp dap
+    -- "codelldb",     -- c/cpp dap
 
     -- "isort", -- python formatter
     -- "black", -- python formatter
