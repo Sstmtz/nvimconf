@@ -35,7 +35,7 @@ return {
       -- "emmet_ls",
       "pylsp", -- mason-lspconfig
       "rust_analyzer", -- mason
-      "java_language_server", -- mason-lspconfig
+      -- "java_language_server", -- mason-lspconfig
       "csharp_ls", -- mason-lspconfig
       -- "tailwindcss", -- mason
       "yamlls", -- mason-lspconfig
@@ -186,8 +186,24 @@ return {
           analyses = {
             unusedparams = true,
           },
+          staticcheck = true,
+          gofumpt = true,
         },
       },
+      single_file_support = false,
+    }
+
+    -- jdtls
+    lspconfig.jdtls.setup {
+      on_attach = on_attach,
+      capabilities = capabilities,
+      cmd = { "jdtls", "-configuration", "~/.cache/jdtls/config", "-data", "~/.cache/jdtls/workspace" },
+      filetypes = { "java" },
+      init_options = {
+        jvm_args = {},
+        workspace = "~/.cache/jdtls/workspace",
+      },
+      single_file_support = false,
     }
 
     -- -- emmet_ls

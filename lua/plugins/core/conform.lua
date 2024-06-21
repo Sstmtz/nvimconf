@@ -22,6 +22,7 @@ return {
         lua = { "stylua" },
         python = { "isort", "black" },
         -- cpp = { "cpplint" },
+        go = { "goimports" },
       },
       format_on_save = {
         lsp_fallback = true,

@@ -12,7 +12,8 @@ mason_lspconfig.setup {
     --"rust-analyzer",
     "clangd", -- c/c++ lsp
     "csharp_ls", -- c# lsp
-    "java_language_server", -- java lsp
+    -- "java_language_server", -- java lsp
+    "jdtls", -- java lsp
     "pylsp", -- python lsp
     "gopls", -- go lsp
     "sqlls", -- sql lsp
