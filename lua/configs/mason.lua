@@ -1,30 +1,31 @@
 local options = {
   ensure_installed = {
-    "lua-language-server",        -- lua lsp
+    -- "lua-language-server",        -- lua lsp
 
-    "typescript-language-server", -- javascript lsp
-    "js-debug-adapter",           -- javascript dap
-    "eslint-lsp",                 -- eslint lsp
-    -- "tailwindcss-language-server",
+    -- "typescript-language-server", -- javascript/typescript lsp
+    -- "js-debug-adapter",            -- javascript dap
+    -- "eslint-lsp",                 -- eslint lsp
+    -- "tailwindcss-language-server", -- css lsp
 
     -- "cpplint",   -- c/cpp linter
-    "clangd",       -- c/cpp lsp
+    -- "clangd",       -- c/cpp lsp
     "clang-format", -- c/cpp formatter
-    "codelldb",     -- c/cpp dap
+    -- "codelldb",     -- c/cpp dap
 
     -- "isort", -- python formatter
     -- "black", -- python formatter
-    "debugpy",   -- python dap
-    -- "mypy",      -- python linter
-    "pyright",   -- python lsp
-    "ruff-lsp",  -- python lsp
+    "debugpy", -- python dap
+    -- "mypy",    -- python linter
+    -- "pyright",   -- python lsp
+    "ruff", -- python lsp & linter
+    -- "python-lsp-server", -- python lsp
 
-    "gopls",     -- go lsp
+    -- "gopls",             -- go lsp
     "goimports", -- go formatter
     -- "gofmt",     -- go formatter
 
-    "rust-analyzer",        -- rust lsp
-    "java-language-server", -- java lsp & dap
+    "rust-analyzer", -- rust lsp
+    -- "java-language-server", -- java lsp & dap
   },
 
   PATH = "skip",

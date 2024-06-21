@@ -52,3 +52,7 @@ map(
 )
 map("n", "<leader>xL", "<cmd>Trouble loclist toggle<cr>", { desc = "Location List (Trouble)" })
 map("n", "<leader>xQ", "<cmd>Trouble qflist toggle<cr>", { desc = "Quickfix List (Trouble)" })
+
+-- rest
+map("n", "<leader>rr", "<cmd>Rest run<cr>", { desc = "Run request under the cursor" })
+map("n", "<leader>rl", "<cmd>Rest run last<cr>", { desc = "Re-run latest request" })
