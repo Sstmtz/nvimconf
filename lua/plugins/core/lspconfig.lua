@@ -13,8 +13,16 @@ return {
     local util = require "lspconfig/util"
 
     local servers = {
+      "bashls", -- mason-lspconfig
+      "awk_ls", -- mason-lspconfig
+      "taplo", -- mason-lspconfig
+      "texlab", -- mason-lspconfig
+      -- "matlab_ls", -- mason-lspconfig
       "html", -- mason-lspconfig
       "cssls", -- mason-lspconfig
+      "jsonls", --mason-lspconfig
+      "lemminx", -- mason-lspconfig
+      "sqlls", -- mason-lspconfig
       -- "eslint",
       -- "pyright",
       -- "ruff_lsp",
@@ -28,8 +36,10 @@ return {
       "pylsp", -- mason-lspconfig
       "rust_analyzer", -- mason
       "java_language_server", -- mason-lspconfig
+      "csharp_ls", -- mason-lspconfig
       -- "tailwindcss", -- mason
-      "yamlls",
+      "yamlls", -- mason-lspconfig
+      "dockerls", -- mason-lspconfig
       -- "vuels",
       -- "volar",
     }
@@ -142,6 +152,24 @@ return {
           directory = ".ccls-cache",
         },
       },
+    }
+
+    -- csharp_ls
+    lspconfig.csharp_ls.setup {
+      on_attach = on_attach,
+      capabilities = capabilities,
+      cmd = { "csharp-ls" },
+      filetypes = { "cs" },
+      init_options = {
+        AutomaticWorkspaceInit = true,
+      },
+      root_dir = function(startpath)
+        return lspconfig.util.root_pattern "*.sln"(startpath)
+          or lspconfig.util.root_pattern "*.csproj"(startpath)
+          or lspconfig.util.root_pattern "*.fsproj"(startpath)
+          or lspconfig.util.root_pattern ".git"(startpath)
+      end,
+      single_file_support = false,
     }
 
     -- gopls
