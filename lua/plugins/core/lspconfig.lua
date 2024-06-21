@@ -22,7 +22,7 @@ return {
       "cssls", -- mason-lspconfig
       "jsonls", --mason-lspconfig
       "lemminx", -- mason-lspconfig
-      "sqlls", -- mason-lspconfig
+      -- "sqls", -- mason-lspconfig
       -- "eslint",
       -- "pyright",
       -- "ruff_lsp",
