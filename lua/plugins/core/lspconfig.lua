@@ -23,12 +23,15 @@ return {
       "svelte",
       -- "lua_ls",
       "ccls", -- usr
-      "graphql",
-      "emmet_ls",
+      -- "graphql",
+      -- "emmet_ls",
       "pylsp", -- mason-lspconfig
       "rust_analyzer", -- mason
       "java_language_server", -- mason-lspconfig
-      "tailwindcss", -- mason
+      -- "tailwindcss", -- mason
+      "yamlls",
+      -- "vuels",
+      -- "volar",
     }
 
     -- 代码诊断图标
@@ -61,14 +64,41 @@ return {
       on_init = on_init,
       capabilities = capabilities,
       init_options = {
-        preference = {
-          disableSuggestions = true,
-        },
+        -- vue = {
+        --   hybridMode = false,
+        -- },
+        -- plugins = {
+        --   {
+        --     name = "@vue/typescript-plugin",
+        --     location = "~/.nvm/versions/node/v21.7.3/lib/node_modules/@vue/language-server",
+        --     languages = { "vue" },
+        --   },
+        -- },
+      },
+      preference = {
+        disableSuggestions = true,
+      },
+      filetypes = {
+        "javascript",
+        "typescript",
+        -- "vue",
+        -- "javascriptreact",
+        -- "typescriptreact",
       },
       commands = {
         OrganizeImports = {
           organize_imports,
           description = "Organize Imports",
+        },
+      },
+    }
+
+    -- volar
+    lspconfig.volar.setup {
+      filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
+      init_options = {
+        vue = {
+          hybridMode = false,
         },
       },
     }
@@ -131,11 +161,12 @@ return {
         },
       },
     }
-    -- emmet_ls
-    lspconfig.emmet_ls.setup {
-      capabilities = capabilities,
-      filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
-    }
+
+    -- -- emmet_ls
+    -- lspconfig.emmet_ls.setup {
+    --   capabilities = capabilities,
+    --   filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
+    -- }
 
     -- graphql
     lspconfig.graphql.setup {

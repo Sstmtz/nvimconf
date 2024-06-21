@@ -5,7 +5,7 @@ local options = {
     -- "typescript-language-server", -- javascript/typescript lsp
     -- "js-debug-adapter",            -- javascript dap
     -- "eslint-lsp",                 -- eslint lsp
-    "tailwindcss-language-server", -- css lsp
+    -- "tailwindcss-language-server", -- css lsp
 
     -- "cpplint",   -- c/cpp linter
     -- "clangd",       -- c/cpp lsp
