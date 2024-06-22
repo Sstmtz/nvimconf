@@ -1,7 +1,8 @@
 -- LSP Config
 return {
   "neovim/nvim-lspconfig",
-  event = "User FilePost",
+  -- event = "User FilePost",
+  event = { "BufReadPre", "BufNewFile" },
   config = function()
     require("configs.lspconfig").defaults()
 
