@@ -16,13 +16,15 @@ require("lspkind").init {
   --
   -- default: 'default'
   preset = "codicons",
+
   -- override preset symbols
   --
   -- default: {}
   symbol_map = {
+    Namespace = "󰌗",
     Text = "󰉿",
     Method = "󰆧",
-    Function = "󰊕",
+    Function = "󰆧",
     Constructor = "",
     Field = "󰜢",
     Variable = "󰀫",
@@ -36,7 +38,7 @@ require("lspkind").init {
     Keyword = "󰌋",
     Snippet = "",
     Color = "󰏘",
-    File = "󰈙",
+    File = "󰈚",
     Reference = "󰈇",
     Folder = "󰉋",
     EnumMember = "",
@@ -44,9 +46,20 @@ require("lspkind").init {
     Struct = "󰙅",
     Event = "",
     Operator = "󰆕",
-    TypeParameter = "",
+    TypeParameter = "󰊄",
+    Table = "",
+    Object = "󰅩",
+    Tag = "",
+    Array = "[]",
+    Boolean = "",
+    Number = "",
+    Null = "󰟢",
+    String = "󰉿",
+    Calendar = "",
+    Watch = "󰥔",
+    Package = "",
     Copilot = "",
+    Codeium = "",
+    TabNine = "",
   },
 }
-
-vim.api.nvim_set_hl(0, "CmpItemKindCopilot", { fg = "#6CC644" })

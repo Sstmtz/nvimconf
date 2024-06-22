@@ -56,3 +56,11 @@ map("n", "<leader>xQ", "<cmd>Trouble qflist toggle<cr>", { desc = "Quickfix List
 -- rest
 map("n", "<leader>rr", "<cmd>Rest run<cr>", { desc = "Run request under the cursor" })
 map("n", "<leader>rl", "<cmd>Rest run last<cr>", { desc = "Re-run latest request" })
+
+-- codeium
+map("n", "<leader>cd", "<cmd>Codeium Disable<cr>", { desc = "Disable codeium" })
+map("n", "<leader>ce", "<cmd>Codeium Enable<cr>", { desc = "Enable codeium" })
+
+map("i", "<C-a>", function()
+  return vim.fn["codeium#Accept"]()
+end, { expr = true, silent = true })

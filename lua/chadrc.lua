@@ -5,17 +5,25 @@ local M = {}
 
 M.ui = {
 
+  ------------------------------- base46 -------------------------------------
   hl_add = {},
   hl_override = {},
   changed_themes = {},
-  theme_toggle = { "onedark", "one_light" },
+  theme_toggle = { "catppuccin", "onedark", "one_light" },
   theme = "catppuccin",
   transparency = false,
 
-  lsp = { signature = false },
-  lsp_semantic_tokens = true,
+  cmp = {
+    icons = true,
+    lspkind_text = true,
+    style = "default", -- default/flat_light/flat_dark/atom/atom_colored
+  },
 
   telescope = { style = "borderless" }, -- borderless / bordered
+
+  ------------------------------- nvchad_ui modules -----------------------------
+  lsp = { signature = false },
+  lsp_semantic_tokens = true,
 
   statusline = {
     theme = "default", -- default/vscode/vscode_colored/minimal
@@ -39,12 +47,6 @@ M.ui = {
     },
   },
 
-  cmp = {
-    icons = true,
-    lspkind_text = true,
-    style = "default", -- default/flat_light/flat_dark/atom/atom_colored
-  },
-
   -- lazyload it when there are 1+ buffers
   tabufline = {
     enabled = true,
@@ -58,6 +60,7 @@ M.ui = {
     excluded_groups = { "terminal (t)", "autopairs", "Nvim", "Opens" }, -- can add group name or with mode
   },
 
+  -- nvdash(dashboard)
   nvdash = {
     load_on_startup = false,
 

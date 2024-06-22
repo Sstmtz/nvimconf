@@ -63,6 +63,11 @@ return {
 
   {
     "jay-babu/mason-nvim-dap.nvim",
+    event = { "BufReadPre", "BufNewFile" },
+    dependencies = {
+      "williamboman/mason.nvim",
+      "mfussenegger/nvim-dap",
+    },
     config = function()
       require "configs.mason-nvim-dap"
     end,

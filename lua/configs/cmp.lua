@@ -108,7 +108,7 @@ local options = {
     { name = "nvim_lua" },
     { name = "path" },
     { name = "crates" },
-    { name = "copilot" }, -- copilot source
+    -- { name = "copilot" }, -- copilot source
   },
 }
 
