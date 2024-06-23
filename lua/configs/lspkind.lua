@@ -1,4 +1,5 @@
 -- Competation icons
+
 require("lspkind").init {
   -- DEPRECATED (use mode instead): enables text annotations
   --

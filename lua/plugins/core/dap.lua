@@ -62,7 +62,7 @@ return {
       -- require("core.utils").load_mappings "dap_go"
     end,
   },
-
+  -- rust dap
   {
     "mrcjkb/rustaceanvim",
     version = "^4",

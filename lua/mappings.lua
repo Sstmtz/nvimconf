@@ -1,4 +1,6 @@
-require "nvchad.mappings"
+-- require "nvchad.mappings"
+
+require "keymap.nvchad"
 
 -- add yours here
 local map = vim.keymap.set
@@ -8,6 +10,16 @@ map("n", "<C-h>", "<cmd> TmuxNavigateLeft <CR>", { desc = "windows left" })
 map("n", "<C-l>", "<cmd> TmuxNavigateRight <CR>", { desc = "windows right" })
 map("n", "<C-j>", "<cmd> TmuxNavigateDown <CR>", { desc = "windows down" })
 map("n", "<C-k>", "<cmd> TmuxNavigateUp <CR>", { desc = "windows up" })
+
+-- whichkey
+map("n", "<leader>wK", "<cmd>WhichKey <CR>", { desc = "whichkey all keymaps" })
+map("n", "<leader>wk", function()
+  vim.cmd("WhichKey " .. vim.fn.input "WhichKey: ")
+end, { desc = "whichkey query lookup" })
+
+-- nvimtree
+map("n", "<C-n>", "<cmd>NvimTreeToggle<CR>", { desc = "nvimtree toggle window" })
+map("n", "<leader>e", "<cmd>NvimTreeFocus<CR>", { desc = "nvimtree focus window" })
 
 -- dap
 map("n", "<leader>db", "<cmd> DapToggleBreakpoint <CR>", { desc = "Add breakpoint at line" })

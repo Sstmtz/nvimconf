@@ -1,5 +1,13 @@
 local lspsaga = require "lspsaga"
 
+local icons = {
+  cmp = require("utils.icons").get("cmp", true),
+  diagnostics = require("utils.icons").get("diagnostics", true),
+  kind = require("utils.icons").get("kind", true),
+  type = require("utils.icons").get("type", true),
+  ui = require("utils.icons").get("ui", true),
+}
+
 lspsaga.setup {
   ui = {
     border = "rounded",
@@ -11,7 +19,45 @@ lspsaga.setup {
     code_action = "💡",
     actionfix = " ",
     lines = { "┗", "┣", "┃", "━", "┏" },
-    kind = nil,
+    kind = {
+      Class = { icons.kind.Class, "LspKindClass" },
+      Constant = { icons.kind.Constant, "LspKindConstant" },
+      Constructor = { icons.kind.Constructor, "LspKindConstructor" },
+      Enum = { icons.kind.Enum, "LspKindEnum" },
+      EnumMember = { icons.kind.EnumMember, "LspKindEnumMember" },
+      Event = { icons.kind.Event, "LspKindEvent" },
+      Field = { icons.kind.Field, "LspKindField" },
+      File = { icons.kind.File, "LspKindFile" },
+      Function = { icons.kind.Function, "LspKindFunction" },
+      Interface = { icons.kind.Interface, "LspKindInterface" },
+      Key = { icons.kind.Keyword, "LspKindKey" },
+      Method = { icons.kind.Method, "LspKindMethod" },
+      Module = { icons.kind.Module, "LspKindModule" },
+      Namespace = { icons.kind.Namespace, "LspKindNamespace" },
+      Number = { icons.kind.Number, "LspKindNumber" },
+      Operator = { icons.kind.Operator, "LspKindOperator" },
+      Package = { icons.kind.Package, "LspKindPackage" },
+      Property = { icons.kind.Property, "LspKindProperty" },
+      Struct = { icons.kind.Struct, "LspKindStruct" },
+      TypeParameter = { icons.kind.TypeParameter, "LspKindTypeParameter" },
+      Variable = { icons.kind.Variable, "LspKindVariable" },
+      -- Type
+      Array = { icons.type.Array, "LspKindArray" },
+      Boolean = { icons.type.Boolean, "LspKindBoolean" },
+      Null = { icons.type.Null, "LspKindNull" },
+      Object = { icons.type.Object, "LspKindObject" },
+      String = { icons.type.String, "LspKindString" },
+      -- ccls-specific icons.
+      TypeAlias = { icons.kind.TypeAlias, "LspKindTypeAlias" },
+      Parameter = { icons.kind.Parameter, "LspKindParameter" },
+      StaticMethod = { icons.kind.StaticMethod, "LspKindStaticMethod" },
+      -- Microsoft-specific icons.
+      Text = { icons.kind.Text, "LspKindText" },
+      Snippet = { icons.kind.Snippet, "LspKindSnippet" },
+      Folder = { icons.kind.Folder, "LspKindFolder" },
+      Unit = { icons.kind.Unit, "LspKindUnit" },
+      Value = { icons.kind.Value, "LspKindValue" },
+    },
     imp_sign = "󰳛 ",
   },
   code_action = {
@@ -51,5 +97,18 @@ lspsaga.setup {
     sign = true,
     virtual_text = true,
     priority = 100,
+  },
+  outline = {
+    win_position = "right",
+    win_width = 30,
+    show_detail = true,
+    auto_preview = false,
+    auto_refresh = true,
+    custom_sort = nil,
+    keys = {
+      jump = "o",
+      expand_collapse = "u",
+      quit = "q",
+    },
   },
 }

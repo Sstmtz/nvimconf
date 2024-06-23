@@ -13,6 +13,7 @@ return {
       -- enable syntax highlighting
       highlight = {
         enable = true,
+        use_languagetree = true,
       },
       -- enable indentation
       indent = { enable = true },
@@ -25,7 +26,7 @@ return {
         "json",
         "javascript",
         "typescript",
-        "tsx",
+        -- "tsx",
         "yaml",
         "html",
         "css",
@@ -41,7 +42,7 @@ return {
         "vim",
         "dockerfile",
         "gitignore",
-        "query",
+        -- "query",
         "vimdoc",
         "c",
       },
@@ -54,6 +55,14 @@ return {
           node_decremental = "<bs>",
         },
       },
+      modules = {},
+      auto_install = false,
+      sync_install = false,
+      ignore_install = {},
+      parser_install_dir = vim.fn.stdpath "cache" .. "/treesitter",
     }
+
+    -- prefer git parsers
+    require("nvim-treesitter.install").prefer_git = true
   end,
 }

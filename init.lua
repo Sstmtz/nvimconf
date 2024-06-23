@@ -30,12 +30,12 @@ require("lazy").setup({
   { import = "plugins.tools" },
   { import = "plugins.other" },
   { import = "plugins.ui" },
-  { import = "plugins.modules" },
+  { import = "plugins.libs" },
 }, lazy_config)
 
 -- load theme
-dofile(vim.g.base46_cache .. "defaults")
-dofile(vim.g.base46_cache .. "statusline")
+dofile(vim.g.base46_cache .. "defaults") --
+dofile(vim.g.base46_cache .. "statusline") -- NvChad ui/statusline
 
 -- NvChad autocmds
 require "nvchad.autocmds"

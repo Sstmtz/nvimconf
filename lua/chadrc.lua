@@ -9,7 +9,7 @@ M.ui = {
   hl_add = {},
   hl_override = {},
   changed_themes = {},
-  theme_toggle = { "catppuccin", "onedark", "one_light" },
+  theme_toggle = { "catppuccin", "onedark" },
   theme = "catppuccin",
   transparency = false,
 
@@ -29,22 +29,9 @@ M.ui = {
     theme = "default", -- default/vscode/vscode_colored/minimal
     -- default/round/block/arrow separators work only for default statusline theme
     -- round and block will work for minimal theme only
-    separator_style = "default",
+    separator_style = "round",
     order = nil,
     modules = nil,
-  },
-
-  term = {
-    hl = "Normal:term,WinSeparator:WinSeparator",
-    sizes = { sp = 0.3, vsp = 0.2 },
-    float = {
-      relative = "editor",
-      row = 0.3,
-      col = 0.25,
-      width = 0.5,
-      height = 0.4,
-      border = "single",
-    },
   },
 
   -- lazyload it when there are 1+ buffers
@@ -86,5 +73,39 @@ M.ui = {
     },
   },
 }
+
+M.term = {
+  hl = "Normal:term,WinSeparator:WinSeparator",
+  sizes = { sp = 0.3, vsp = 0.2, ["bo sp"] = 0.3, ["bo vsp"] = 0.2 },
+  float = {
+    relative = "editor",
+    row = 0.3,
+    col = 0.25,
+    width = 0.5,
+    height = 0.4,
+    border = "single",
+  },
+}
+
+-- M.base46 = {
+--   integrations = {
+--     "blankline",
+--     "cmp",
+--     "defaults",
+--     "devicons",
+--     "git",
+--     "lsp",
+--     "mason",
+--     "nvcheatsheet",
+--     "nvdash",
+--     "nvimtree",
+--     "statusline",
+--     "syntax",
+--     "treesitter",
+--     "tbline",
+--     "telescope",
+--     "whichkey",
+--   },
+-- }
 
 return M

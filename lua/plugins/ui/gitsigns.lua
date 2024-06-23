@@ -1,6 +1,6 @@
 return {
   "lewis6991/gitsigns.nvim",
-  event = "User FilePost",
+  event = { "CursorHold", "CursorHoldI" },
   opts = function()
     return require "configs.gitsigns"
   end,
