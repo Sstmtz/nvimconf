@@ -8,6 +8,6 @@ return {
   },
 
   config = function()
-    require "configs.aerial"
+    require "configs.ui.aerial"
   end,
 }

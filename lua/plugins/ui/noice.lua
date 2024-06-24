@@ -14,6 +14,6 @@ return {
     "nvim-treesitter/nvim-treesitter",
   },
   config = function()
-    require "configs.noice"
+    require "configs.ui.noice"
   end,
 }

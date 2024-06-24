@@ -26,17 +26,19 @@ return {
       end
     end,
   },
+
   {
     "jay-babu/mason-nvim-dap.nvim",
-    event = "VeryLazy",
+    event = { "BufReadPre", "BufNewFile" },
     dependencies = {
       "williamboman/mason.nvim",
       "mfussenegger/nvim-dap",
     },
-    opts = {
-      handlers = {},
-    },
+    config = function()
+      require "configs.mason.mason-nvim-dap"
+    end,
   },
+
   -- python dap
   {
     "mfussenegger/nvim-dap-python",
@@ -65,11 +67,12 @@ return {
   -- rust dap
   {
     "mrcjkb/rustaceanvim",
+    -- lazy = true,
     version = "^4",
     ft = { "rust" },
-    dependencies = "neovim/nvim-lspconfig",
+    dependencies = { "nvim-lua/plenary.nvim" },
     config = function()
-      require "configs.rustaceanvim"
+      require "configs.dap.rustaceanvim"
     end,
   },
   {
@@ -81,14 +84,18 @@ return {
   },
   {
     "theHamsta/nvim-dap-virtual-text",
-    lazy = false,
+    lazy = true,
+    event = "VeryLazy",
     config = function(_, opts)
       require("nvim-dap-virtual-text").setup(opts)
     end,
   },
   {
     "saecki/crates.nvim",
+    lazy = true,
     ft = { "toml" },
+    event = "BufReadPost Cargo.toml",
+    dependencies = { "nvim-lua/plenary.nvim" },
     config = function(_, opts)
       local crates = require "crates"
       crates.setup(opts)
