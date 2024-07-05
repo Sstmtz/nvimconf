@@ -68,6 +68,16 @@ local options = {
 
   formatting = formatting_style,
 
+  sources = {
+    { name = "nvim_lsp" },
+    { name = "luasnip" },
+    { name = "buffer" },
+    { name = "nvim_lua" },
+    { name = "path" },
+    { name = "crates" },
+    -- { name = "copilot" }, -- copilot source
+  },
+
   mapping = {
     ["<C-p>"] = cmp.mapping.select_prev_item(),
     ["<C-n>"] = cmp.mapping.select_next_item(),
@@ -100,14 +110,6 @@ local options = {
         fallback()
       end
     end, { "i", "s" }),
-  },
-  sources = {
-    { name = "nvim_lsp" },
-    { name = "luasnip" },
-    { name = "buffer" },
-    { name = "nvim_lua" },
-    { name = "path" },
-    { name = "crates" },
   },
 }
 

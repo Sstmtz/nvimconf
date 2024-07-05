@@ -30,4 +30,3 @@ return {
     yazi_floating_window_border = "rounded",
   },
 }
-

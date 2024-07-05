@@ -14,44 +14,61 @@
 &emsp;&emsp;我的neovim配置结构如下:
 
 ```
-nvim/
+nvim
 ├─ .stylua.toml
 ├─ init.lua
-└─ lua/
-   ├─ chadrc.lua        # 自定义个性化设置
-   ├─ mappings.lua      # 自定义按键映射
-   ├─ options.lua       # 自定义选项配置
-   ├─ configs/          # 已安装的插件配置
-   └─ plugins/          # 安装的插件
-      ├─ core/              # 核心插件
-      ├─ other/             # 其他插件
-      └─ tools/             # 内置工具插件
+├─ lazy-lock.json
+├─ lua
+│  ├─ chadrc.lua
+│  ├─ mappings.lua
+│  ├─ options.lua
+│  ├─ configs             #✨插件配置✨#        
+│  │  ├─ dap              
+│  │  │  └─ clients/
+│  │  ├─ mason/           
+│  │  └─ ui/              
+│  ├─ plugins/            #✨安装的插件✨#
+│  │  ├─ core/
+│  │  ├─ libs/
+│  │  ├─ other
+│  │  ├─ tools/
+│  │  └─ ui/
+│  └─ utils/              #✨自定义功能✨#
+└─ snippets/              #✨代码片段✨#  
 ```
 
 ## 📋 Plugins list 插件列表
 
 &emsp;&emsp;安装的插件大部分存放在plugins目录下,&emsp;并进行简单的分类。一部分ui插件安装来自[NvChad/ui](https://github.com/NvChad/NvChad/blob/v2.5/lua/nvchad/plugins/ui.lua)。<br>
-&emsp;&emsp;目前分为 **核心插件(core)**, **其他插件(others)** 和 **工具插件(tools)**。
+&emsp;&emsp;目前分为 **核心插件(core)**,**未归类插件(others)**,**工具插件(tools)**,**库插件(libs)**,**ui插件(ui)**。
 
 - core
   - 代码补全:&emsp;nvim-cmp
   - 代码诊断:&emsp;nvim-lint
   - 代码格式化:&emsp;conform
-  - LSP:&emsp;nvim-lspconfig
-  - LSP托管:&emsp;mason,&emsp;mason-lspconfig,&emsp;none-ls
+  - lsp相关:&emsp;nvim-lspconfig
+  - mason相关:&emsp;mason,&emsp;mason-lspconfig,&emsp;mason-nvim-dap,&emsp;mason-tool-installer
   - 文本高亮:&emsp;nvim-treesitter
-  - 图标显示:&emsp;nvim-web-devicons,&emsp;gitsigns
-  - UI美化:&emsp;nvim-tree,&emsp;nvim-telescope
+  - ui美化:&emsp;nvim-tree,&emsp;nvim-telescope
+  - ......
+- libs 
+  - 提供40+独立Lua模块库: &emsp;mini 
   - ......
 - other
-  - 注释:&emsp;Comment
-  - 输入框美化:&emsp;dressing
+  - 更好的注释:&emsp;Comment
   - 括号匹配:&emsp;surround
   - 代码诊断定位:&emsp;trouble
   - ......
 - tools
-  - lazygit
-  - yazi
+  - 内置git GUI: &emsp;lazygit
+  - 内置yazi文件管理器: &emsp;yazi
+  - 内置ai: &emsp;copilot,&emsp;codeium 
+  - ......
+- ui 
+  - 代码大纲: &emsp;aerial
+  - 消息弹窗: &emsp;noice,&emsp;dressing
+  - 待办事务: &emsp;todo-comments
+  - 精美图标: &emsp;lspkind,&emsp;nvim-web-devicons,&emsp;gitsigns
   - ......
 
 ## 📦 Installation 安装

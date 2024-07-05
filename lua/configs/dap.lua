@@ -1,5 +1,9 @@
 local dap = require "dap"
 
+require "configs.dap.clients.codelldb"
+require "configs.dap.clients.python"
+require "configs.dap.clients.delve"
+
 dap.adapters["pwa-node"] = {
   type = "server",
   host = "127.0.0.1",

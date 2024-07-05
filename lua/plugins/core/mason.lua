@@ -1,5 +1,4 @@
 return {
-
   {
     "williamboman/mason.nvim",
     cmd = { "Mason", "MasonInstall", "MasonInstallAll", "MasonUpdate" },
@@ -36,7 +35,7 @@ return {
     -- lazy = false,
     event = "VeryLazy",
     config = function()
-      require "configs.mason-lspconfig"
+      require "configs.mason.mason-lspconfig"
     end,
   },
 
@@ -45,7 +44,7 @@ return {
     -- lazy = false,
     event = "VeryLazy",
     config = function()
-      require "configs.mason-tool-installer"
+      require "configs.mason.mason-tool-installer"
     end,
   },
 
@@ -58,13 +57,6 @@ return {
     },
     config = function()
       require "configs.null-ls" -- require your null-ls config here (example below)
-    end,
-  },
-
-  {
-    "jay-babu/mason-nvim-dap.nvim",
-    config = function()
-      require "configs.mason-nvim-dap"
     end,
   },
 }

@@ -32,3 +32,11 @@ if vim.g.neovide then
   -- Remember Previous Window Size
   vim.g.neovide_remember_window_size = true
 end
+
+-- codeium options
+-- 禁用tab补全(codeium)
+vim.g.codeium_no_map_tab = true
+-- 禁用codeium自动启动(使用:CodeiumEnable可手动启用)
+vim.g.codeium_enabled = true
+-- 禁用默认快捷键
+vim.g.codeium_disable_bindings = false
