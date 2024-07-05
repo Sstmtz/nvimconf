@@ -1,9 +1,9 @@
 local M = {}
 
 local map = vim.keymap.set
-local conf = require("nvconfig").ui.lsp
+-- local conf = require("nvconfig").ui.lsp
 
-M.on_attach = function(bufnr, client)
+M.on_attach = function(_, bufnr)
   local function opts(desc)
     return { buffer = bufnr, desc = "LSP " .. desc }
   end
@@ -33,10 +33,19 @@ M.on_attach = function(bufnr, client)
   map("n", "gr", vim.lsp.buf.references, opts "Show references")
 
   -- setup signature popup
-  if conf.signature and client.server_capabilities.signatureHelpProvider then
-    require("nvchad.lsp.signature").setup(client, bufnr)
-  end
+  -- if conf.signature and client.server_capabilities.signatureHelpProvider then
+  --   require("nvchad.lsp.signature").setup(client, bufnr)
+  -- end
+
+  -- if client.supports_method "textDocument/inlayHint" then
+  --   vim.lsp.inlay_hint.enable(true, { bufnr })
+  -- end
 end
+
+-- M.toggle_inlay_hints = function()
+--   local bufnr = vim.api.nvim_get_current_buf()
+--   vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr }, { bufnr })
+-- end
 
 M.on_init = function(client, _)
   if client.supports_method "textDocument/semanticTokens" then
