@@ -11,7 +11,6 @@ lspsaga.setup {
     code_action = "💡",
     actionfix = " ",
     lines = { "┗", "┣", "┃", "━", "┏" },
-    kind = nil,
     imp_sign = "󰳛 ",
   },
   code_action = {
@@ -51,5 +50,18 @@ lspsaga.setup {
     sign = true,
     virtual_text = true,
     priority = 100,
+  },
+  outline = {
+    win_position = "right",
+    win_width = 30,
+    show_detail = true,
+    auto_preview = false,
+    auto_refresh = true,
+    custom_sort = nil,
+    keys = {
+      jump = "o",
+      expand_collapse = "u",
+      quit = "q",
+    },
   },
 }

@@ -16,7 +16,7 @@ mason_lspconfig.setup {
     "jdtls", -- java lsp
     "pylsp", -- python lsp
     "gopls", -- go lsp
-    "sqlls", -- sql lsp
+    -- "sqls", -- sql lsp
     "cssls", -- css lsp
     "html", -- html lsp
     "jsonls", -- json lsp

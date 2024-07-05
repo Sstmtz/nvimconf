@@ -1,12 +1,18 @@
 local java_cmds = vim.api.nvim_create_augroup("java_cmds", { clear = true })
 local cache_vars = {}
 
+-- Here you can add files/folders that you use at
+-- the root of your project. `nvim-jdtls` will use
+-- these to find the path to your project source code.
 local root_files = {
   ".git",
-  "mvnw",
-  "gradlew",
-  "pom.xml",
-  "build.gradle",
+
+  --- here are more examples files that may or
+  --- may not work as root files, according to some guy on the internet
+  -- 'mvnw',
+  -- 'gradlew',
+  -- 'pom.xml',
+  -- 'build.gradle',
 }
 
 local features = {
