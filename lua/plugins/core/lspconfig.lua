@@ -6,6 +6,6 @@ return {
   config = function()
     -- default lsp config
     require("utils.lsp").defaults()
-    require "configs.lspconfig"
+    require "configs.lsp.lspconfig"
   end,
 }

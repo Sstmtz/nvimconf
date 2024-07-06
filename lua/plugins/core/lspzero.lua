@@ -3,6 +3,6 @@ return {
   branch = "v3.x",
   lazy = true,
   config = function()
-    require "configs.lspzero"
+    require "configs.lsp.lspzero"
   end,
 }
