@@ -151,6 +151,7 @@ lspconfig.clangd.setup {
 --       directory = ".ccls-cache",
 --     },
 --   },
+--   single_file_support = false,
 -- }
 
 -- csharp_ls

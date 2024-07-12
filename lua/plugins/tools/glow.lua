@@ -1,3 +1,4 @@
+-- Markdwon preview
 return {
   "ellisonleao/glow.nvim",
   config = true,

@@ -12,6 +12,14 @@ return {
       -- typescriptreact = { "eslint_d" },
       -- svelte = { "eslint_d" },
       python = { "ruff" },
+      -- cpp = { "cpplint" },
+      -- c = { "clangdtidy" },
+      cmake = { "cmakelint" },
+      -- lua = { "luacheck" },
+      markdown = { "markdownlint" },
+      json = { "jsonlint" },
+      yaml = { "yamllint" },
+      bash = { "shellcheck" },
     }
 
     local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
@@ -26,5 +34,9 @@ return {
     vim.keymap.set("n", "<leader>l", function()
       lint.try_lint()
     end, { desc = "Trigger linting for current file" })
+
+    vim.keymap.set({ "n", "v" }, "gq", function()
+      require("lint").try_lint()
+    end)
   end,
 }

@@ -1,3 +1,4 @@
+-- Cmake tools
 return {
   "Civitasv/cmake-tools.nvim",
   config = function()

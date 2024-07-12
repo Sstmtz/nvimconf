@@ -2,8 +2,14 @@ require "nvchad.options"
 
 -- add yours here!
 
--- local o = vim.o
--- o.cursorlineopt ='both' -- to enable cursorline!
+-- 自动对齐
+vim.g.neoformat_basic_format_align = 1
+-- 自动删除行尾空格
+vim.g.neoformat_basic_format_trim = 1
+-- 将制表符替换为空格
+vim.g.neoformat_basic_format_retab = 1
+-- 只提示错误消息
+-- vim.g.neoformat_only_msg_on_error = 1
 
 -- neovide config
 if vim.g.neovide then
