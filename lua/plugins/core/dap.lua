@@ -72,7 +72,7 @@ return {
     ft = { "rust" },
     dependencies = { "nvim-lua/plenary.nvim" },
     config = function()
-      require "configs.dap.rustaceanvim"
+      require "configs.lsp.clients.rustaceanvim"
     end,
   },
   {

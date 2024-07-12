@@ -11,7 +11,7 @@ dap.adapters.codelldb = {
   },
 }
 
-dap.configurations.c = {
+dap.configurations.cpp = {
   {
     name = "Debug",
     type = "codelldb",
@@ -41,5 +41,5 @@ dap.configurations.c = {
   },
 }
 
-dap.configurations.cpp = dap.configurations.c
-dap.configurations.rust = dap.configurations.c
+dap.configurations.c = dap.configurations.cpp
+dap.configurations.rust = dap.configurations.cpp

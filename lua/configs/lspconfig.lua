@@ -109,8 +109,14 @@ lspconfig.volar.setup {
 -- clangd
 lspconfig.clangd.setup {
   on_attach = function(client, bufnr)
-    client.server_capabilities.signatureHelpProvider = false
+    client.server_capabilities.signatureHelpProvider = true
     on_attach(client, bufnr)
+  end,
+  on_new_config = function(new_config, new_cwd)
+    local status, cmake = pcall(require, "cmake-tools")
+    if status then
+      cmake.clangd_on_new_config(new_config)
+    end
   end,
   capabilities = capabilities,
   filetypes = { "c", "cpp", "objc", "objcpp", "cuda", "proto" },

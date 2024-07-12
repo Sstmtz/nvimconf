@@ -16,7 +16,7 @@
 ```
 nvim
 ├─ .stylua.toml
-├─ init.lua
+├─ init.luaa
 ├─ lazy-lock.json
 ├─ lua
 │  ├─ chadrc.lua

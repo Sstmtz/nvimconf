@@ -5,6 +5,6 @@ return {
     "hrsh7th/nvim-cmp",
   },
   config = function()
-    require "configs.nvim-jdtls"
+    require "configs.lsp.clients.nvim-jdtls"
   end,
 }

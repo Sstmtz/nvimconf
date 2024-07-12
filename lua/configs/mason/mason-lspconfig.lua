@@ -11,6 +11,7 @@ mason_lspconfig.setup {
     "lua_ls", -- lua lsp
     --"rust-analyzer",
     "clangd", -- c/c++ lsp
+    "cmake", -- cmake lsp
     "csharp_ls", -- c# lsp
     -- "java_language_server", -- java lsp
     "jdtls", -- java lsp

@@ -7,7 +7,7 @@ require("luasnip.loaders.from_vscode").lazy_load { paths = vim.g.vscode_snippets
 -- snipmate format
 require("luasnip.loaders.from_snipmate").load()
 require("luasnip.loaders.from_snipmate").lazy_load { paths = vim.g.snipmate_snippets_path or "" }
-require("luasnip.loaders.from_snipmate").load { paths = "~/.config/nvim/snippets/snipmate" }
+-- require("luasnip.loaders.from_snipmate").load { paths = "~/.config/nvim/snippets/snipmate" }
 
 -- lua format
 require("luasnip.loaders.from_lua").load()
