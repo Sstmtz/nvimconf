@@ -31,6 +31,7 @@ require("lazy").setup({
   { import = "plugins.other" },
   { import = "plugins.ui" },
   { import = "plugins.libs" },
+  { import = "plugins.nvchad" },
 }, lazy_config)
 
 -- load theme
