@@ -14,12 +14,12 @@ return {
       python = { "ruff" },
       -- cpp = { "cpplint" },
       -- c = { "clangdtidy" },
-      cmake = { "cmakelint" },
+      -- cmake = { "cmakelint" },
       -- lua = { "luacheck" },
-      markdown = { "markdownlint" },
+      -- markdown = { "markdownlint" },
       json = { "jsonlint" },
       yaml = { "yamllint" },
-      bash = { "shellcheck" },
+      -- bash = { "shellcheck" },
     }
 
     local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })

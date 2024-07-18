@@ -1,7 +1,7 @@
 {
   "Comment.nvim": { "branch": "master", "commit": "e30b7f2008e52442154b66f7c519bfd2f1e32acb" },
   "LuaSnip": { "branch": "master", "commit": "ce0a05ab4e2839e1c48d072c5236cce846a387bc" },
-  "NvChad": { "branch": "v2.5", "commit": "46088dd73e63995ac3f01e5a019f96c524307d57" },
+  "NvChad": { "branch": "v2.5", "commit": "bf477a6bbaa13348007482fff0416f3cb92ec55c" },
   "aerial.nvim": { "branch": "master", "commit": "db0af491ff13c18a966ce2f9ac7f5211aec000a7" },
   "base46": { "branch": "v2.5", "commit": "b17df65f6d423055e9fdfa4e7f55967c03862f29" },
   "cmake-tools.nvim": { "branch": "master", "commit": "4be3c229fe932043fd83ad52fdf0ba9af7297789" },
