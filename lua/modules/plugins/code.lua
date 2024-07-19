@@ -39,7 +39,6 @@ Code["mrcjkb/rustaceanvim"] = {
   config = require "code.rustaceanvim",
 }
 
-
 Code["ThePrimeagen/refactoring.nvim"] = {
   event = { "BufReadPre", "BufNewFile" },
   dependencies = {
@@ -53,24 +52,45 @@ Code["p00f/clangd_extensions.nvim"] = {
 }
 
 Code["nvim-neotest/neotest"] = {
-  opts = {
-    adapters = {
-      ["neotest-golang"] = {
-        -- Here we can set options for neotest-golang, e.g.
-        -- go_test_args = { "-v", "-race", "-count=1", "-timeout=60s" },
-        dap_go_enabled = true, -- requires leoluz/nvim-dap-go
-      },
-      ["rustaceanvim.neotest"] = {},
-    },
-  },
+  config = require "code.neotest",
   dependencies = {
     "fredrikaverpil/neotest-golang",
+    "nvim-neotest/neotest-python",
+  },
+  -- stylua: ignore
+  keys = {
+    {"<leader>t", "", desc = "+test"},
+    { "<leader>tt", function() require("neotest").run.run(vim.fn.expand("%")) end, desc = "Run File" },
+    { "<leader>tT", function() require("neotest").run.run(vim.uv.cwd()) end, desc = "Run All Test Files" },
+    { "<leader>tr", function() require("neotest").run.run() end, desc = "Run Nearest" },
+    { "<leader>tl", function() require("neotest").run.run_last() end, desc = "Run Last" },
+    { "<leader>ts", function() require("neotest").summary.toggle() end, desc = "Toggle Summary" },
+    { "<leader>to", function() require("neotest").output.open({ enter = true, auto_close = true }) end, desc = "Show Output" },
+    { "<leader>tO", function() require("neotest").output_panel.toggle() end, desc = "Toggle Output Panel" },
+    { "<leader>tS", function() require("neotest").run.stop() end, desc = "Stop" },
+    { "<leader>tw", function() require("neotest").watch.toggle(vim.fn.expand("%")) end, desc = "Toggle Watch" },
   },
 }
 
 Code["b0o/SchemaStore.nvim"] = {
   lazy = true,
   version = false, -- last release is way too old
+}
+
+Code["linux-cultist/venv-selector.nvim"] = {
+  branch = "regexp", -- Use this branch for the new version
+  cmd = "VenvSelect",
+  enabled = true,
+  opts = {
+    settings = {
+      options = {
+        notify_user_on_venv_activation = true,
+      },
+    },
+  },
+  --  Call config for python files and load the cached venv automatically
+  ft = "python",
+  keys = { { "<leader>cv", "<cmd>:VenvSelect<cr>", desc = "Select VirtualEnv", ft = "python" } },
 }
 
 return Code

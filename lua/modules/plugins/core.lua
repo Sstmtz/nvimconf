@@ -41,7 +41,7 @@ Core["neovim/nvim-lspconfig"] = {
   dependencies = {
     { "williamboman/mason.nvim" },
     { "williamboman/mason-lspconfig.nvim" },
-    { "folke/neoconf.nvim" },
+    { "folke/neoconf.nvim", cmd = "Neoconf" },
   },
   opts = {
     setup = {
@@ -133,6 +133,7 @@ Core["hrsh7th/nvim-cmp"] = {
       "hrsh7th/cmp-nvim-lsp",
       "hrsh7th/cmp-buffer",
       "hrsh7th/cmp-path",
+      "petertriho/cmp-git",
     },
   },
   opts = function()
@@ -192,6 +193,7 @@ Core["mfussenegger/nvim-dap"] = {
     { "<leader>ds", function() require("dap").session() end, desc = "Session" },
     { "<leader>dt", function() require("dap").terminate() end, desc = "Terminate" },
     { "<leader>dw", function() require("dap.ui.widgets").hover() end, desc = "Widgets" },
+    { "<leader>td", function() require("neotest").run.run({strategy = "dap"}) end, desc = "Debug Nearest" },
   },
   dependencies = {
     {
@@ -208,6 +210,19 @@ Core["mfussenegger/nvim-dap"] = {
     },
     "theHamsta/nvim-dap-virtual-text",
     "leoluz/nvim-dap-go",
+    {
+      "mfussenegger/nvim-dap-python",
+      -- stylua: ignore
+      keys = {
+        { "<leader>dPt", function() require('dap-python').test_method() end, desc = "Debug Method", ft = "python" },
+        { "<leader>dPc", function() require('dap-python').test_class() end, desc = "Debug Class", ft = "python" },
+      },
+      config = function()
+        require("dap-python").setup(
+          require("mason-registry").get_package("debugpy"):get_install_path() .. "/venv/bin/python"
+        )
+      end,
+    },
   },
 }
 

@@ -57,6 +57,7 @@ return function()
     update_in_insert = false,
     sources = sources,
     default_timeout = settings.format_timeout,
+    root_dir = require("null-ls.utils").root_pattern(".null-ls-root", ".neoconf.json", "Makefile", ".git"),
   }
 
   require("mason.mason-null-ls").setup()

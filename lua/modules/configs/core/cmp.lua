@@ -65,6 +65,9 @@ local options = {
       require "clangd_extensions.cmp_scores",
     },
   },
+  auto_brackets = {
+    "python",
+  },
   snippet = {
     expand = function(args)
       require("luasnip").lsp_expand(args.body)
@@ -89,6 +92,7 @@ local options = {
     { name = "path" },
     { name = "crates" },
     { name = "copilot" }, -- copilot source
+    { name = "git" },
     {
       name = "codeium",
       group_index = 1,

@@ -126,6 +126,8 @@ settings["treesitter_deps"] = {
   "gosum",
   -- Python
   "python",
+  "ninja",
+  "rst",
   -- Rust
   "rust",
   "ron",
@@ -143,6 +145,12 @@ settings["treesitter_deps"] = {
   "javascript",
   "typescript",
   "yaml",
+  -- Git
+  "git_config",
+  "gitcommit",
+  "git_rebase",
+  "gitignore",
+  "gitattributes",
 }
 
 return settings
