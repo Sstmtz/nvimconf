@@ -60,6 +60,11 @@ local options = {
       winhighlight = "Normal:CmpDoc",
     },
   },
+  sorting = {
+    comparators = {
+      require "clangd_extensions.cmp_scores",
+    },
+  },
   snippet = {
     expand = function(args)
       require("luasnip").lsp_expand(args.body)
@@ -69,14 +74,31 @@ local options = {
   formatting = formatting_style,
 
   sources = {
-    { name = "lazydev" },
-    { name = "nvim_lsp" },
+    { name = "lazydev", group_index = 0 },
+    { name = "nvim_lsp", max_item_count = 350 },
     { name = "luasnip" },
-    { name = "buffer" },
+    {
+      name = "buffer",
+      option = {
+        get_bufnrs = function()
+          return vim.api.nvim_buf_line_count(0) < 7500 and vim.api.nvim_list_bufs() or {}
+        end,
+      },
+    },
     { name = "nvim_lua" },
     { name = "path" },
     { name = "crates" },
     { name = "copilot" }, -- copilot source
+    {
+      name = "codeium",
+      group_index = 1,
+      priority = 100,
+    },
+    {
+      name = "cmp_tabnine",
+      group_index = 2,
+      priority = 100,
+    },
   },
 
   mapping = {
