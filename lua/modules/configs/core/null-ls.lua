@@ -7,7 +7,7 @@ return function()
   ---@param formatter_name string
   ---@return table|nil
   local function formatter_args(formatter_name)
-    local args = require("code.formatters." .. formatter_name)
+    local args = require("code.formatters." .. formatter_name) or nil
     return args
   end
 

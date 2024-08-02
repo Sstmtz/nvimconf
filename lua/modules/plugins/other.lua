@@ -5,6 +5,12 @@ Other["windwp/nvim-ts-autotag"] = {
   ft = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
 }
 
+Other["nvim-treesitter/nvim-treesitter-context"] = {
+  -- event = { "BufReadPre", "BufNewFile" },
+  cmd = { "TSContextEnable", "TSContextDisable", "TSContextToggle" },
+  config = require "other.treesitter-context",
+}
+
 Other["kylechui/nvim-surround"] = {
   event = { "BufReadPre", "BufNewFile" },
   version = "*", -- Use for stability; omit to use `main` branch for the latest features

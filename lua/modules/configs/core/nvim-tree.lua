@@ -12,10 +12,10 @@ local options = {
     update_root = false,
   },
   view = {
+    preserve_window_proportions = true, -- keep the size of terminal constant
     adaptive_size = false,
     side = "left",
     width = 30,
-    preserve_window_proportions = true,
   },
   git = {
     enable = true,

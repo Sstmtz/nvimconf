@@ -10,9 +10,25 @@ return function()
       expand = "⊞",
       collapse = "⊟",
       code_action = "💡",
+      action = "",
       actionfix = " ",
       lines = { "┗", "┣", "┃", "━", "┏" },
       imp_sign = "󰳛 ",
+    },
+    lightbulb = {
+      enable = false,
+      enable_in_insert = false,
+      sign = false,
+      sign_priority = 40,
+      virtual_text = true,
+    },
+    finder = {
+      max_width = 0.5,
+      left_width = 0.3,
+      right_width = 0.3,
+      default = "def+ref+imp",
+      layout = "float",
+      silent = false,
     },
     code_action = {
       num_showcut = true,
@@ -22,19 +38,22 @@ return function()
         exec = "<CR>",
       },
     },
-    lightbulb = {
-      enable = true,
-      enable_in_insert = true,
-      sign = true,
-      sign_priority = 40,
-      virtual_text = true,
-    },
     rename = {
       quit = "<C-c>",
       exec = "<CR>",
       mark = "x",
       confirm = "<CR>",
       in_select = true,
+    },
+    hover = {
+      max_width = 0.6,
+      max_height = 0.4,
+      auto_preview = false,
+      open_link = "gx",
+      open_cmd = "!chromium",
+      preview = {
+        quit = "q",
+      },
     },
     symbol_in_winbar = {
       enable = true,
@@ -55,9 +74,10 @@ return function()
     outline = {
       win_position = "right",
       win_width = 30,
-      show_detail = true,
+      detail = true,
       auto_preview = false,
       auto_refresh = true,
+      auto_close = true,
       custom_sort = nil,
       keys = {
         jump = "o",

@@ -49,7 +49,7 @@ for _, language in ipairs(js_filetypes) do
         type = "pwa-node",
         request = "attach",
         name = "Attach",
-        processId = require("dap.utils").pick_process,
+        -- processId = require("dap.utils").pick_process,
         cwd = "${workspaceFolder}",
       },
     }

@@ -45,12 +45,22 @@ return function(options)
         "meson.build",
         "meson_options.txt",
         "build.ninja"
-      )(fname) or require("lspconfig.util").root_pattern("compile_commands.json", "compile_flags.txt")(fname) or require(
-        "lspconfig.util"
-      ).find_git_ancestor(fname)
+      )(fname) or require("lspconfig.util").root_pattern(
+        ".clangd",
+        ".clang-tidy",
+        ".clang-format",
+        "compile_commands.json",
+        "compile_flags.txt"
+      )(fname) or require("lspconfig.util").find_git_ancestor(fname)
     end,
     on_attach = options.on_attach,
     capabilities = vim.tbl_deep_extend("keep", { offsetEncoding = { "utf-16", "utf-8" } }, options.capabilities),
+    on_new_config = function(new_config, new_cwd)
+      local status, cmake = pcall(require, "cmake-tools")
+      if status then
+        cmake.clangd_on_new_config(new_config)
+      end
+    end,
     single_file_support = true,
     cmd = {
       "clangd",

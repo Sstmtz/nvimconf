@@ -5,7 +5,7 @@ return function()
 
   dap.adapters.codelldb = {
     type = "server",
-    host = "localhost",
+    -- host = "localhost",
     port = "${port}",
     executable = {
       command = vim.fn.exepath "codelldb", -- Find codelldb on $PATH

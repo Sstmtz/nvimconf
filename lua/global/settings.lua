@@ -21,9 +21,11 @@ settings["format_on_save"] = true
 ---@type number
 settings["format_timeout"] = 1000
 
+-- Set diagnostic virtual text
 ---@type boolean
-settings["diagnostics_virtual_text"] = true
+settings["diagnostics_virtual_text"] = false
 
+-- Set diagnostic level
 ---@type "ERROR"|"WARN"|"INFO"|"HINT"
 settings["diagnostics_level"] = "HINT"
 

@@ -67,7 +67,7 @@ Core["mfussenegger/nvim-lint"] = {
 }
 
 Core["nvimtools/none-ls.nvim"] = {
-  event = { "CursorHold", "CursorHoldI" },
+  event = { "BufReadPre", "BufNewFile" },
   config = require "core.null-ls",
   dependencies = {
     "nvim-lua/plenary.nvim",
@@ -82,6 +82,7 @@ Core["hrsh7th/nvim-cmp"] = {
     {
       -- snippet plugin
       "L3MON4D3/LuaSnip",
+      event = "InsertEnter",
       build = vim.fn.has "win32" ~= 0 and "make install_jsregexp" or nil,
       dependencies = { "rafamadriz/friendly-snippets", "benfowler/telescope-luasnip.nvim" },
       opts = { history = true, updateevents = "TextChanged,TextChangedI" },
@@ -144,18 +145,18 @@ Core["hrsh7th/nvim-cmp"] = {
   end,
 }
 
-Core["tzachar/cmp-tabnine"] = {
-  build = { "./install.sh", ":CmpTabnineHub" },
-  dependencies = "hrsh7th/nvim-cmp",
-  opts = {
-    max_lines = 1000,
-    max_num_results = 3,
-    sort = true,
-  },
-  config = function(_, opts)
-    require("cmp_tabnine.config"):setup(opts)
-  end,
-}
+-- Core["tzachar/cmp-tabnine"] = {
+--   build = { "./install.sh" },
+--   -- dependencies = "hrsh7th/nvim-cmp",
+--   opts = {
+--     max_lines = 1000,
+--     max_num_results = 3,
+--     sort = true,
+--   },
+--   config = function(_, opts)
+--     require("cmp_tabnine.config"):setup(opts)
+--   end,
+-- }
 
 Core["mfussenegger/nvim-dap"] = {
   cmd = {

@@ -91,18 +91,18 @@ local options = {
     { name = "nvim_lua" },
     { name = "path" },
     { name = "crates" },
-    { name = "copilot" }, -- copilot source
+    -- { name = "copilot" }, -- copilot source
     { name = "git" },
     {
       name = "codeium",
-      group_index = 1,
-      priority = 100,
-    },
-    {
-      name = "cmp_tabnine",
       group_index = 2,
       priority = 100,
     },
+    -- {
+    --   name = "cmp_tabnine",
+    --   group_index = 2,
+    --   priority = 100,
+    -- },
   },
 
   mapping = {

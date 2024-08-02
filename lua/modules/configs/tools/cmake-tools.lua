@@ -12,18 +12,13 @@ return function()
     --       ${kit}
     --       ${kitGenerator}
     --       ${variant:xx}
-    cmake_build_directory = function()
-      if osys.iswin32 then
-        return "out\\${variant:buildType}"
-      end
-      return "out/${variant:buildType}"
-    end, -- this is used to specify generate directory for cmake, allows macro expansion, can be a string or a function returning the string, relative to cwd.
-    cmake_soft_link_compile_commands = true, -- this will automatically make a soft link from compile commands file to project root dir
-    cmake_compile_commands_from_lsp = false, -- this will automatically set compile commands file location using lsp, to use it, please set `cmake_soft_link_compile_commands` to false
+    cmake_build_directory = "build",
+    cmake_soft_link_compile_commands = false, -- this will automatically make a soft link from compile commands file to project root dir
+    cmake_compile_commands_from_lsp = true, -- this will automatically set compile commands file location using lsp, to use it, please set `cmake_soft_link_compile_commands` to false
     cmake_kits_path = nil, -- this is used to specify global cmake kits path, see CMakeKits for detailed usage
     cmake_variants_message = {
       short = { show = true }, -- whether to show short message
-      long = { show = true, max_length = 40 }, -- whether to show long message
+      long = { show = true, max_length = 80 }, -- whether to show long message
     },
     cmake_dap_configuration = { -- debug settings for cmake
       name = "cpp",
@@ -45,10 +40,10 @@ return function()
           auto_close_when_success = true, -- typically, you can use it with the "always" option; it will auto-close the quickfix buffer if the execution is successful.
         },
         toggleterm = {
-          direction = "float", -- 'vertical' | 'horizontal' | 'tab' | 'float'
-          close_on_exit = false, -- whether close the terminal when exit
+          direction = "horizontal", -- 'vertical' | 'horizontal' | 'tab' | 'float'
+          close_on_exit = true, -- whether close the terminal when exit
           auto_scroll = true, -- whether auto scroll to the bottom
-          singleton = true, -- single instance, autocloses the opened one, if present
+          -- singleton = false, -- single instance, autocloses the opened one, if present
         },
         overseer = {
           new_task_opts = {
@@ -64,10 +59,10 @@ return function()
           end, -- a function that gets overseer.Task when it is created, before calling `task:start`
         },
         terminal = {
-          name = "Main Terminal",
+          name = "CMake Terminal",
           prefix_name = "[CMakeTools]: ", -- This must be included and must be unique, otherwise the terminals will not work. Do not use a simple spacebar " ", or any generic name
           split_direction = "horizontal", -- "horizontal", "vertical"
-          split_size = 11,
+          split_size = 6,
 
           -- Window handling
           single_terminal_per_instance = true, -- Single viewport, multiple windows
@@ -77,12 +72,12 @@ return function()
           -- Running Tasks
           start_insert = false, -- If you want to enter terminal with :startinsert upon using :CMakeRun
           focus = false, -- Focus on terminal when cmake task is launched.
-          do_not_add_newline = false, -- Do not hit enter on the command inserted when using :CMakeRun, allowing a chance to review or modify the command before hitting enter.
+          do_not_add_newline = true, -- Do not hit enter on the command inserted when using :CMakeRun, allowing a chance to review or modify the command before hitting enter.
         }, -- terminal executor uses the values in cmake_terminal
       },
     },
     cmake_runner = { -- runner to use
-      name = "terminal", -- name of the runner
+      name = "toggleterm", -- name of the runner
       opts = {}, -- the options the runner will get, possible values depend on the runner type. See `default_opts` for possible values.
       default_opts = { -- a list of default and possible values for runners
         quickfix = {
@@ -110,10 +105,10 @@ return function()
           on_new_task = function(task) end, -- a function that gets overseer.Task when it is created, before calling `task:start`
         },
         terminal = {
-          name = "Main Terminal",
+          name = "CMake Terminal",
           prefix_name = "[CMakeTools]: ", -- This must be included and must be unique, otherwise the terminals will not work. Do not use a simple spacebar " ", or any generic name
           split_direction = "horizontal", -- "horizontal", "vertical"
-          split_size = 11,
+          split_size = 6,
 
           -- Window handling
           single_terminal_per_instance = true, -- Single viewport, multiple windows
@@ -128,8 +123,8 @@ return function()
       },
     },
     cmake_notifications = {
-      runner = { enabled = true },
-      executor = { enabled = true },
+      runner = { enabled = false },
+      executor = { enabled = false },
       spinner = { "⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏" }, -- icons used for progress display
       refresh_rate_ms = 100, -- how often to iterate icons
     },

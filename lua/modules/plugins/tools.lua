@@ -120,20 +120,18 @@ Tools["mrjones2014/legendary.nvim"] = {
   -- dependencies = { 'kkharji/sqlite.lua' }
 }
 
-if not settings.enable_nvchad then
-  Tools["akinsho/toggleterm.nvim"] = {
-    lazy = true,
-    cmd = {
-      "ToggleTerm",
-      "ToggleTermSetName",
-      "ToggleTermToggleAll",
-      "ToggleTermSendVisualLines",
-      "ToggleTermSendCurrentLine",
-      "ToggleTermSendVisualSelection",
-    },
-    config = require "tools.toggleterm",
-  }
-end
+Tools["akinsho/toggleterm.nvim"] = {
+  lazy = true,
+  cmd = {
+    "ToggleTerm",
+    "ToggleTermSetName",
+    "ToggleTermToggleAll",
+    "ToggleTermSendVisualLines",
+    "ToggleTermSendCurrentLine",
+    "ToggleTermSendVisualSelection",
+  },
+  config = require "tools.toggleterm",
+}
 
 Tools["folke/which-key.nvim"] = {
   lazy = true,
@@ -182,6 +180,12 @@ Tools["folke/trouble.nvim"] = {
   cmd = "Trouble",
   dependencies = { "nvim-tree/nvim-web-devicons", "folke/todo-comments.nvim" },
   config = require "tools.trouble",
+}
+
+Tools["dgagn/diagflow.nvim"] = {
+  event = "LspAttach",
+  opts = {},
+  config = require "tools.diagflow",
 }
 
 Tools["nvim-pack/nvim-spectre"] = {

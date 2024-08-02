@@ -6,7 +6,31 @@ return function()
 
   local opts = {
     capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities()),
+    on_init = function(client, _)
+      if client.supports_method "textDocument/semanticTokens" then
+        client.server_capabilities.semanticTokensProvider = nil
+      end
+    end,
   }
+
+  opts.capabilities.textDocument.completion.completionItem = {
+    documentationFormat = { "markdown", "plaintext" },
+    snippetSupport = true,
+    preselectSupport = true,
+    insertReplaceSupport = true,
+    labelDetailsSupport = true,
+    deprecatedSupport = true,
+    commitCharactersSupport = true,
+    tagSupport = { valueSet = { 1 } },
+    resolveSupport = {
+      properties = {
+        "documentation",
+        "detail",
+        "additionalTextEdits",
+      },
+    },
+  }
+
   -- Setup lsps that are not supported by `mason.nvim` but supported by `nvim-lspconfig` here.
   if vim.fn.executable "dart" == 1 then
     local ok, _opts = pcall(require, "user.configs.lsp-servers.dartls")

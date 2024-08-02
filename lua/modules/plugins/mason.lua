@@ -20,4 +20,6 @@ Mason["jay-babu/mason-nvim-dap.nvim"] = {
   config = require "mason.mason-nvim-dap",
 }
 
+Mason["mason-org/mason-registry"] = {}
+
 return Mason
