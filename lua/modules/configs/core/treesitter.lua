@@ -8,6 +8,21 @@ return function()
       enable = true,
       use_languagetree = true,
       additional_vim_regex_highlighting = false,
+      -- disable = function(lang, buf)
+      --   local max_filesize = 100 * 1024 -- 100 KB
+      --   local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
+      --   if ok and stats and stats.size > max_filesize then
+      --     return true
+      --   end
+      -- end,
+      disable = function(ft, bufnr)
+        if vim.tbl_contains({ "gitcommit" }, ft) or (vim.api.nvim_buf_line_count(bufnr) > 7500 and ft ~= "vimdoc") then
+          return true
+        end
+
+        local ok, is_large_file = pcall(vim.api.nvim_buf_get_var, bufnr, "bigfile_disable_treesitter")
+        return ok and is_large_file
+      end,
     },
     -- enable indentation
     indent = { enable = true },

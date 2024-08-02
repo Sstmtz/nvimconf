@@ -23,11 +23,9 @@ M.setup = function()
   })
 
   local opts = {
-    capabilities = vim.tbl_deep_extend(
-      "force",
-      vim.lsp.protocol.make_client_capabilities(),
-      require("cmp_nvim_lsp").default_capabilities()
-    ),
+    capabilities = require("modules.utils.lsp").capabilities,
+    on_attach = require("modules.utils.lsp").on_attach,
+    on_init = require("modules.utils.lsp").on_init,
   }
 
   ---A handler to setup all servers defined under `completion/servers/*.lua`

@@ -69,4 +69,26 @@ UI["onsails/lspkind.nvim"] = {
   config = require "ui.lspkind",
 }
 
+-- UI["goolord/alpha-nvim"] = {
+--   lazy = true,
+--   event = "BufWinEnter",
+--   config = require "ui.alpha",
+-- }
+
+UI["nvimdev/dashboard-nvim"] = {
+  event = "VimEnter",
+  config = require "ui.dashboard",
+}
+
+UI["folke/paint.nvim"] = {
+  lazy = true,
+  event = { "CursorHold", "CursorHoldI" },
+  config = require "ui.paint",
+}
+
+UI["zbirenbaum/neodim"] = {
+  event = "LspAttach",
+  config = require "ui.neodim",
+}
+
 return UI

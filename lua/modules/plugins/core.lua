@@ -231,4 +231,10 @@ Core["echasnovski/mini.nvim"] = {
   version = false,
 }
 
+Core["LunarVim/bigfile.nvim"] = {
+  lazy = false,
+  config = require "core.bigfile",
+  cond = require("global.settings").load_big_files_faster,
+}
+
 return Core

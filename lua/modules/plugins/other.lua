@@ -3,12 +3,17 @@ local Other = {}
 Other["windwp/nvim-ts-autotag"] = {
   event = { "BufReadPre", "BufNewFile" },
   ft = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
+  config = require "other.autotag",
 }
 
 Other["nvim-treesitter/nvim-treesitter-context"] = {
   -- event = { "BufReadPre", "BufNewFile" },
   cmd = { "TSContextEnable", "TSContextDisable", "TSContextToggle" },
   config = require "other.treesitter-context",
+}
+
+Other["JoosepAlviste/nvim-ts-context-commentstring"] = {
+  config = require "other.ts-context-commentstring",
 }
 
 Other["kylechui/nvim-surround"] = {

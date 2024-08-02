@@ -32,11 +32,11 @@ M.on_attach = function(_, bufnr)
   map({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts "Code action")
   map("n", "gr", vim.lsp.buf.references, opts "Show references")
 
-  -- setup signature popup
+  -- -- setup signature popup
   -- if conf.signature and client.server_capabilities.signatureHelpProvider then
   --   require("nvchad.lsp.signature").setup(client, bufnr)
   -- end
-
+  --
   -- if client.supports_method "textDocument/inlayHint" then
   --   vim.lsp.inlay_hint.enable(true, { bufnr })
   -- end
@@ -53,7 +53,11 @@ M.on_init = function(client, _)
   end
 end
 
-M.capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
+M.capabilities = vim.tbl_deep_extend(
+  "force",
+  vim.lsp.protocol.make_client_capabilities(),
+  require("cmp_nvim_lsp").default_capabilities()
+)
 
 M.capabilities.textDocument.completion.completionItem = {
   documentationFormat = { "markdown", "plaintext" },
