@@ -5,6 +5,11 @@ return function()
     theme = "hyper",
     config = {
       header = dashboard_image,
+      hide = {
+        statusline = false, -- hide statusline default is true
+        tabline = true, -- hide the tabline
+        winbar = true, -- hide winbar
+      },
       shortcut = {
         -- action can be a function type
         {
