@@ -1,5 +1,7 @@
 local UI = {}
 
+local settings = require "global.settings"
+
 UI["lewis6991/gitsigns.nvim"] = {
   lazy = true,
   event = { "CursorHold", "CursorHoldI" },
@@ -90,5 +92,29 @@ UI["zbirenbaum/neodim"] = {
   event = "LspAttach",
   config = require "ui.neodim",
 }
+
+if settings.file_tree == "neo-tree" then
+  UI["folke/edgy.nvim"] = {
+    event = "VeryLazy",
+    init = function()
+      vim.opt.laststatus = 3
+      vim.opt.splitkeep = "screen"
+    end,
+    opts = require "ui.edgy",
+  }
+end
+
+-- UI["petertriho/nvim-scrollbar"] = {
+--   config = function()
+--     require("hlslens").setup {
+--       build_position_cb = function(plist, _, _, _)
+--         require("scrollbar.handlers.search").handler.show(plist.start_pos)
+--       end,
+--     }
+--   end,
+--   dependencies = {
+--     "kevinhwang91/nvim-hlslens",
+--   },
+-- }
 
 return UI

@@ -33,7 +33,7 @@ settings["diagnostics_level"] = "HINT"
 settings["disabled_plugins"] = {}
 
 ---@type "neo-tree" | "nvim-tree"
-settings["filetree"] = "nvim-tree"
+settings["file_tree"] = "nvim-tree"
 
 ---@type "nvchad" | "catppuccin"
 settings["colorscheme"] = "nvchad"

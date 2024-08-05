@@ -146,6 +146,7 @@ Core["hrsh7th/nvim-cmp"] = {
 }
 
 -- Core["tzachar/cmp-tabnine"] = {
+--   after = "nvim-cmp",
 --   build = { "./install.sh" },
 --   -- dependencies = "hrsh7th/nvim-cmp",
 --   opts = {

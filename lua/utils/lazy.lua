@@ -5,7 +5,7 @@ local Lazy = {}
 
 Lazy.config = {
   defaults = { lazy = true },
-  install = { colorscheme = { settings["colorscheme"] } },
+  install = { colorscheme = { settings.colorscheme } },
 
   ui = {
     icons = {
