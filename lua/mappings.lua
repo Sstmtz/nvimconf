@@ -23,3 +23,12 @@ map("n", "K", "<cmd>Lspsaga hover_doc<cr>", { desc = "Show hover doc" })
 map("n", "[c", function()
   require("treesitter-context").go_to_context(vim.v.count1)
 end, { silent = true })
+
+-- lsp-signature
+map({ "n" }, "<C-k>", function()
+  require("lsp_signature").toggle_float_win()
+end, { silent = true, noremap = true, desc = "toggle signature" })
+
+map({ "n" }, "<Leader>k", function()
+  vim.lsp.buf.signature_help()
+end, { silent = true, noremap = true, desc = "toggle signature" })

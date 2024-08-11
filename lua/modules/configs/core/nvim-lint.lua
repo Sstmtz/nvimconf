@@ -13,8 +13,8 @@ return function()
     cmake = { "cmakelint" },
     -- lua = { "luacheck" },
     markdown = { "markdownlint-cli2" },
-    json = { "jsonlint" },
-    yaml = { "yamllint" },
+    -- json = { "jsonlint" },
+    -- yaml = { "yamllint" },
     -- bash = { "shellcheck" },
   }
 

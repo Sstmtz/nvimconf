@@ -1,2 +1,2 @@
-local lazy = require("utils.lazy")
+local lazy = require "utils.lazy"
 lazy:install_plugins()

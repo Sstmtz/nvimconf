@@ -11,7 +11,7 @@ Mason["jay-babu/mason-null-ls.nvim"] = {
     "williamboman/mason.nvim",
     "nvimtools/none-ls.nvim",
   },
-  config = require "mason.mason-null-ls",
+  -- config = require "mason.mason-null-ls",
 }
 
 Mason["jay-babu/mason-nvim-dap.nvim"] = {

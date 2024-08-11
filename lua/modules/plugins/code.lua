@@ -48,7 +48,7 @@ Code["ThePrimeagen/refactoring.nvim"] = {
 }
 
 Code["p00f/clangd_extensions.nvim"] = {
-  opts = require "code.clangd_extensions",
+  config = require "code.clangd_extensions",
 }
 
 Code["nvim-neotest/neotest"] = {
@@ -91,6 +91,21 @@ Code["linux-cultist/venv-selector.nvim"] = {
   --  Call config for python files and load the cached venv automatically
   ft = "python",
   keys = { { "<leader>cv", "<cmd>:VenvSelect<cr>", desc = "Select VirtualEnv", ft = "python" } },
+}
+
+Code["michaelb/sniprun"] = {
+  branch = "master",
+  build = "sh install.sh",
+  config = function()
+    require("sniprun").setup {}
+  end,
+}
+
+Code["ray-x/navigator.lua"] = {
+  dependencies = {
+    { "ray-x/guihua.lua", build = "cd lua/fzy && make" },
+  },
+  config = require "code.navigator",
 }
 
 return Code

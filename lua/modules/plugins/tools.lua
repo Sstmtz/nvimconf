@@ -1,6 +1,7 @@
 local settings = require "global.settings"
 local Tools = {}
 
+-- lazygit
 Tools["kdheepak/lazygit.nvim"] = {
   cmd = {
     "LazyGit",
@@ -20,6 +21,7 @@ Tools["kdheepak/lazygit.nvim"] = {
   },
 }
 
+-- yazi
 Tools["mikavilpas/yazi.nvim"] = {
   dependencies = {
     "nvim-lua/plenary.nvim",
@@ -38,43 +40,15 @@ Tools["mikavilpas/yazi.nvim"] = {
   },
 }
 
+-- glow
 Tools["ellisonleao/glow.nvim"] = {
   config = true,
   cmd = "Glow",
 }
 
-Tools["iamcco/markdown-preview.nvim"] = {
-  cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-  build = function()
-    vim.fn["mkdp#util#install"]()
-  end,
-  keys = {
-    {
-      "<leader>cp",
-      ft = "markdown",
-      "<cmd>MarkdownPreviewToggle<cr>",
-      desc = "Markdown Preview",
-    },
-  },
-  config = function()
-    vim.cmd [[do FileType]]
-  end,
-}
-
-Tools["lukas-reineke/headlines.nvim"] = {
-  opts = require "tools.headlines",
-  ft = { "markdown", "norg", "rmd", "org" },
-  config = function(_, opts)
-    -- PERF: schedule to prevent headlines slowing down opening a file
-    vim.schedule(function()
-      require("headlines").setup(opts)
-      require("headlines").refresh()
-    end)
-  end,
-}
-
+-- cmake-tools
 Tools["Civitasv/cmake-tools.nvim"] = {
-  event = "VeryLazy",
+  event = { "BufReadPre", "BufNewFile" },
   init = function()
     local loaded = false
     local function check()
@@ -96,21 +70,39 @@ Tools["Civitasv/cmake-tools.nvim"] = {
   config = require "tools.cmake-tools",
 }
 
-if settings.use_copliot then
-  Tools["zbirenbaum/copilot.lua"] = {
-    cmd = "Copilot",
-    event = "InsertEnter",
-    config = function()
-      require "tools.copilot"
-    end,
-    dependencies = { "zbirenbaum/copilot-cmp", config = require "tools.copilot-cmp" },
-  }
-end
-
-Tools["Exafunction/codeium.vim"] = {
-  event = "BufEnter",
+-- markdown-preview
+Tools["iamcco/markdown-preview.nvim"] = {
+  cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+  build = function()
+    vim.fn["mkdp#util#install"]()
+  end,
+  keys = {
+    {
+      "<leader>cp",
+      ft = "markdown",
+      "<cmd>MarkdownPreviewToggle<cr>",
+      desc = "Markdown Preview",
+    },
+  },
+  config = function()
+    vim.cmd [[do FileType]]
+  end,
 }
 
+-- headlines
+Tools["lukas-reineke/headlines.nvim"] = {
+  opts = require "tools.headlines",
+  ft = { "markdown", "norg", "rmd", "org" },
+  config = function(_, opts)
+    -- PERF: schedule to prevent headlines slowing down opening a file
+    vim.schedule(function()
+      require("headlines").setup(opts)
+      require("headlines").refresh()
+    end)
+  end,
+}
+
+-- legendary
 Tools["mrjones2014/legendary.nvim"] = {
   -- since legendary.nvim handles all your keymaps/commands,
   -- its recommended to load legendary.nvim before other plugins
@@ -120,6 +112,7 @@ Tools["mrjones2014/legendary.nvim"] = {
   -- dependencies = { 'kkharji/sqlite.lua' }
 }
 
+-- toggleterm
 Tools["akinsho/toggleterm.nvim"] = {
   lazy = true,
   cmd = {
@@ -213,6 +206,7 @@ Tools["folke/flash.nvim"] = {
   },
 }
 
+-- persistence
 Tools["folke/persistence.nvim"] = {
   event = "BufReadPre",
   opts = {},
@@ -224,6 +218,7 @@ Tools["folke/persistence.nvim"] = {
   },
 }
 
+-- neogen
 Tools["danymat/neogen"] = {
   config = true,
   cmd = "Neogen",
@@ -233,6 +228,7 @@ Tools["danymat/neogen"] = {
   },
 }
 
+-- yanky
 Tools["gbprod/yanky.nvim"] = {
   recommended = true,
   desc = "Better Yank/Paste",
@@ -242,6 +238,7 @@ Tools["gbprod/yanky.nvim"] = {
   },
 }
 
+-- overseer
 Tools["stevearc/overseer.nvim"] = {
   cmd = {
     "OverseerOpen",
@@ -271,10 +268,12 @@ Tools["stevearc/overseer.nvim"] = {
   opts = require "tools.overseer",
 }
 
+-- startuptime
 Tools["dstein64/vim-startuptime"] = {
   cmd = "StartupTime",
   config = function()
     vim.g.startuptime_tries = 10
   end,
 }
+
 return Tools

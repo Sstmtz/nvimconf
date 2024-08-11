@@ -10,6 +10,6 @@ return function()
     transparency = nil, -- disabled by default, allow floating win transparent value 1~100
     wrap = true,
     zindex = 45, -- avoid overlap with nvim.cmp
-    handler_opts = { border = "single" },
+    handler_opts = { border = "rounded" },
   }
 end

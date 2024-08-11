@@ -22,15 +22,13 @@ settings["format_on_save"] = true
 settings["format_timeout"] = 1000
 
 -- Set diagnostic virtual text
+-- Set false if you use other virtual text plugins. e.g. lspsaga, navigatior
 ---@type boolean
 settings["diagnostics_virtual_text"] = false
 
 -- Set diagnostic level
 ---@type "ERROR"|"WARN"|"INFO"|"HINT"
 settings["diagnostics_level"] = "HINT"
-
----@type string[]
-settings["disabled_plugins"] = {}
 
 ---@type "neo-tree" | "nvim-tree"
 settings["file_tree"] = "nvim-tree"
@@ -46,6 +44,13 @@ settings["lazy_checker"] = {
   notify = true, -- get a notification when new updates are found
   frequency = 3600, -- check for updates every hour
   check_pinned = false, -- check for pinned packages that can't be updated
+}
+
+-- [lazy] diabaled plugins
+---@type string[]
+settings["disabled_plugins"] = {
+  "stevearc/aerial.nvim",
+  "ray-x/navigator.lua",
 }
 
 -- [Nvchad] nvdash startup options

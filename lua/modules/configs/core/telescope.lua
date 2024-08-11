@@ -52,9 +52,9 @@ local options = {
   extensions_list = {
     "themes",
     "terms",
-    -- "rest"--
+    -- "rest"
     "noice",
-    "aerial",
+    -- "aerial",
     "refactoring",
   },
 

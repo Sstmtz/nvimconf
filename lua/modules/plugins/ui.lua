@@ -78,7 +78,7 @@ UI["onsails/lspkind.nvim"] = {
 -- }
 
 UI["nvimdev/dashboard-nvim"] = {
-  event = "VimEnter",
+  event = { "UIEnter", "VimEnter" },
   config = require "ui.dashboard",
 }
 
