@@ -1,5 +1,6 @@
 local Core = {}
 
+-- treesitter
 Core["nvim-treesitter/nvim-treesitter"] = {
   event = { "BufReadPost", "BufNewFile" },
   cmd = { "TSInstall", "TSBufEnable", "TSBufDisable", "TSModuleInfo" },
@@ -8,6 +9,7 @@ Core["nvim-treesitter/nvim-treesitter"] = {
   config = require "core.treesitter",
 }
 
+-- telescope
 Core["nvim-telescope/telescope.nvim"] = {
   dependencies = { "nvim-treesitter/nvim-treesitter" },
   cmd = "Telescope",
@@ -25,6 +27,7 @@ Core["nvim-telescope/telescope.nvim"] = {
   end,
 }
 
+-- nvim-tree
 Core["nvim-tree/nvim-tree.lua"] = {
   cmd = { "NvimTreeToggle", "NvimTreeFocus" },
   opts = function()
@@ -35,6 +38,7 @@ Core["nvim-tree/nvim-tree.lua"] = {
   end,
 }
 
+-- nvim-lspconfig
 Core["neovim/nvim-lspconfig"] = {
   event = { "CursorHold", "CursorHoldI" },
   config = require "core.lspconfig",
@@ -54,6 +58,7 @@ Core["neovim/nvim-lspconfig"] = {
   },
 }
 
+-- conform
 Core["stevearc/conform.nvim"] = {
   event = "BufWritePre", -- uncomment for format on save
   config = require "core.conform",
@@ -61,11 +66,13 @@ Core["stevearc/conform.nvim"] = {
   cmd = "ConformInfo",
 }
 
+-- nvim-lint
 Core["mfussenegger/nvim-lint"] = {
   events = { "BufWritePost", "BufReadPost", "InsertLeave" },
   config = require "core.nvim-lint",
 }
 
+-- none-ls
 Core["nvimtools/none-ls.nvim"] = {
   event = { "BufReadPre", "BufNewFile" },
   config = require "core.null-ls",
@@ -76,6 +83,7 @@ Core["nvimtools/none-ls.nvim"] = {
   },
 }
 
+-- nvim-cmp
 Core["hrsh7th/nvim-cmp"] = {
   event = "InsertEnter",
   dependencies = {
@@ -163,6 +171,7 @@ Core["hrsh7th/nvim-cmp"] = {
 --   end,
 -- }
 
+-- nvim-dap
 Core["mfussenegger/nvim-dap"] = {
   cmd = {
     "DapSetLogLevel",
@@ -211,14 +220,20 @@ Core["mfussenegger/nvim-dap"] = {
   },
 }
 
+-- mini
 Core["echasnovski/mini.nvim"] = {
   version = false,
 }
 
+-- bigfile
 Core["LunarVim/bigfile.nvim"] = {
   lazy = false,
   config = require "core.bigfile",
   cond = require("global.settings").load_big_files_faster,
+}
+
+Core["nvim-neorocks/rocks.nvim"] = {
+  event = "VeryLazy",
 }
 
 return Core

@@ -7,6 +7,23 @@ Lazy.config = {
   defaults = { lazy = true },
   install = { colorscheme = { settings.colorscheme } },
 
+  pkg = {
+    enabled = true,
+    cache = vim.fn.stdpath "state" .. "/lazy/pkg-cache.lua",
+    -- the first package source that is found for a plugin will be used.
+    sources = {
+      "lazy",
+      "rockspec", -- will only be used when rocks.enabled is true
+      "packspec",
+    },
+  },
+
+  rocks = {
+    enabled = true,
+    root = vim.fn.stdpath "data" .. "/lazy-rocks",
+    server = "https://nvim-neorocks.github.io/rocks-binaries/",
+  },
+
   ui = {
     icons = {
       ft = "",
@@ -90,7 +107,7 @@ function Lazy:spec_with_single_file()
   end
 
   -- Set installed plugins be disabled
-  for _, name in ipairs(settings["disabled_plugins"]) do
+  for _, name in ipairs(settings.disabled_plugins) do
     table.insert(self.modules, { name, enabled = false }) -- set "enable = false" to disable plugin
   end
 end
@@ -142,6 +159,7 @@ function Lazy:install_plugins()
     self.modules,
   }, self.configs)
 
+  -- run nvchad config if NvChad is enabled
   if settings.enable_nvchad then
     -- load theme
     dofile(vim.g.base46_cache .. "defaults")

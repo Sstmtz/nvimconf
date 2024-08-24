@@ -1,5 +1,6 @@
 local Code = {}
 
+-- lspsaga
 Code["nvimdev/lspsaga.nvim"] = {
   event = "LspAttach",
   ft = { "c", "cpp", "lua", "rust", "go", "python", "java", "typescript", "javascript" },
@@ -10,15 +11,18 @@ Code["nvimdev/lspsaga.nvim"] = {
   },
 }
 
+-- lsp_signature
 Code["ray-x/lsp_signature.nvim"] = {
   config = require "code.lsp-signature",
 }
 
+-- glance
 Code["dnlhc/glance.nvim"] = {
   event = "LspAttach",
   config = require "code.glance",
 }
 
+-- crates
 Code["Saecki/crates.nvim"] = {
   event = "BufReadPost Cargo.toml",
   ft = { "toml" },
@@ -31,6 +35,7 @@ Code["Saecki/crates.nvim"] = {
   config = require "code.crates",
 }
 
+-- rustaceanvim
 Code["mrcjkb/rustaceanvim"] = {
   version = "^4",
   lazy = false,
@@ -39,6 +44,7 @@ Code["mrcjkb/rustaceanvim"] = {
   config = require "code.rustaceanvim",
 }
 
+-- refactoring
 Code["ThePrimeagen/refactoring.nvim"] = {
   event = { "BufReadPre", "BufNewFile" },
   dependencies = {
@@ -47,10 +53,12 @@ Code["ThePrimeagen/refactoring.nvim"] = {
   },
 }
 
+-- clangd_extensions
 Code["p00f/clangd_extensions.nvim"] = {
   config = require "code.clangd_extensions",
 }
 
+-- neotest
 Code["nvim-neotest/neotest"] = {
   config = require "code.neotest",
   dependencies = {
@@ -72,11 +80,13 @@ Code["nvim-neotest/neotest"] = {
   },
 }
 
+-- SchemaStore
 Code["b0o/SchemaStore.nvim"] = {
   lazy = true,
   version = false, -- last release is way too old
 }
 
+-- venv-selector
 Code["linux-cultist/venv-selector.nvim"] = {
   branch = "regexp", -- Use this branch for the new version
   cmd = "VenvSelect",
@@ -93,6 +103,7 @@ Code["linux-cultist/venv-selector.nvim"] = {
   keys = { { "<leader>cv", "<cmd>:VenvSelect<cr>", desc = "Select VirtualEnv", ft = "python" } },
 }
 
+-- sniprun
 Code["michaelb/sniprun"] = {
   branch = "master",
   build = "sh install.sh",
@@ -101,6 +112,7 @@ Code["michaelb/sniprun"] = {
   end,
 }
 
+-- navigator
 Code["ray-x/navigator.lua"] = {
   dependencies = {
     { "ray-x/guihua.lua", build = "cd lua/fzy && make" },

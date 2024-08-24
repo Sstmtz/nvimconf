@@ -7,3 +7,5 @@ require "nvchad.options"
 
 vim.g.vscode_snippets_exclude = vim.fn.stdpath "config" .. "/snippets/vscode/"
 vim.g.lua_snippets_path = vim.fn.stdpath "config" .. "/snippets/lua"
+
+vim.g.netrw_liststyle = 3

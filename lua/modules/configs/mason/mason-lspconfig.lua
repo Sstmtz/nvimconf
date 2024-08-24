@@ -23,7 +23,7 @@ M.setup = function()
 
   local opts = {
     capabilities = require("modules.utils.lsp").capabilities,
-    -- on_attach = require("modules.utils.lsp").on_attach,
+    on_attach = require("modules.utils.lsp").on_attach,
     on_init = require("modules.utils.lsp").on_init,
   }
 

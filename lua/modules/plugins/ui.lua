@@ -2,12 +2,14 @@ local UI = {}
 
 local settings = require "global.settings"
 
+-- gitsigns
 UI["lewis6991/gitsigns.nvim"] = {
   lazy = true,
   event = { "CursorHold", "CursorHoldI" },
   config = require "ui.gitsigns",
 }
 
+-- nvim-web-devicons
 UI["nvim-tree/nvim-web-devicons"] = {
   lazy = true,
   event = { "CursorHold", "CursorHoldI" },
@@ -17,6 +19,7 @@ UI["nvim-tree/nvim-web-devicons"] = {
   end,
 }
 
+-- noice
 UI["folke/noice.nvim"] = {
   event = "VeryLazy",
   opts = {},
@@ -32,11 +35,13 @@ UI["folke/noice.nvim"] = {
   config = require "ui.noice",
 }
 
+-- indent-blankline
 UI["lukas-reineke/indent-blankline.nvim"] = {
   event = "User FilePost",
   config = require "ui.indent-blankline",
 }
 
+-- todo-comments
 UI["folke/todo-comments.nvim"] = {
   cmd = { "TodoTrouble", "TodoTelescope" },
   event = { "CursorHold", "CursorHoldI" },
@@ -53,10 +58,12 @@ UI["folke/todo-comments.nvim"] = {
   },
 }
 
+-- dressing
 UI["stevearc/dressing.nvim"] = {
   event = "VeryLazy",
 }
 
+-- aerial
 UI["stevearc/aerial.nvim"] = {
   event = "VeryLazy",
   -- Optional dependencies
@@ -67,6 +74,7 @@ UI["stevearc/aerial.nvim"] = {
   config = require "ui.aerial",
 }
 
+-- lspkind
 UI["onsails/lspkind.nvim"] = {
   config = require "ui.lspkind",
 }
@@ -77,22 +85,26 @@ UI["onsails/lspkind.nvim"] = {
 --   config = require "ui.alpha",
 -- }
 
+-- dashboard
 UI["nvimdev/dashboard-nvim"] = {
   event = { "UIEnter", "VimEnter" },
   config = require "ui.dashboard",
 }
 
+-- paint
 UI["folke/paint.nvim"] = {
   lazy = true,
   event = { "CursorHold", "CursorHoldI" },
   config = require "ui.paint",
 }
 
+-- neodim
 UI["zbirenbaum/neodim"] = {
   event = "LspAttach",
   config = require "ui.neodim",
 }
 
+-- edgy
 if settings.file_tree == "neo-tree" then
   UI["folke/edgy.nvim"] = {
     event = "VeryLazy",

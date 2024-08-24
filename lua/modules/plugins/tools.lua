@@ -1,4 +1,3 @@
-local settings = require "global.settings"
 local Tools = {}
 
 -- lazygit
@@ -274,6 +273,11 @@ Tools["dstein64/vim-startuptime"] = {
   config = function()
     vim.g.startuptime_tries = 10
   end,
+}
+
+-- rest
+Tools["rest-nvim/rest.nvim"] = {
+  event = { "BufReadPre", "BufNewFile" },
 }
 
 return Tools

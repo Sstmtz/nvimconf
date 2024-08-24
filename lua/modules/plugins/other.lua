@@ -13,13 +13,8 @@ Other["nvim-treesitter/nvim-treesitter-context"] = {
 }
 
 Other["JoosepAlviste/nvim-ts-context-commentstring"] = {
-  config = require "other.ts-context-commentstring",
-}
-
-Other["kylechui/nvim-surround"] = {
   event = { "BufReadPre", "BufNewFile" },
-  version = "*", -- Use for stability; omit to use `main` branch for the latest features
-  config = true,
+  config = require "other.ts-context-commentstring",
 }
 
 Other["folke/lazydev.nvim"] = {

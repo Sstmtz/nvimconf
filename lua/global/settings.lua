@@ -51,6 +51,8 @@ settings["lazy_checker"] = {
 settings["disabled_plugins"] = {
   "stevearc/aerial.nvim",
   "ray-x/navigator.lua",
+  -- "rest-nvim/rest.nvim",
+  -- "nvim-neorocks/rocks.nvim",
 }
 
 -- [Nvchad] nvdash startup options
@@ -137,6 +139,7 @@ settings["treesitter_deps"] = {
   "c",
   "cpp",
   "cmake",
+  "ninja",
   -- Go
   "go",
   "gomod",
@@ -144,11 +147,11 @@ settings["treesitter_deps"] = {
   "gosum",
   -- Python
   "python",
-  "ninja",
   "rst",
   -- Rust
   "rust",
   "ron",
+  -- java
   "java",
   "html",
   "css",
@@ -169,6 +172,8 @@ settings["treesitter_deps"] = {
   "git_rebase",
   "gitignore",
   "gitattributes",
+  -- http
+  "http",
 }
 
 ---@type string[]

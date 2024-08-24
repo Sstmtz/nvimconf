@@ -8,10 +8,6 @@ M.on_attach = function(_, bufnr)
     return { buffer = bufnr, desc = "LSP " .. desc }
   end
 
-  -- local function map(mode, l, r, desc)
-  --   vim.keymap.set(mode, l, r, { buffer = bufnr, desc = desc })
-  -- end
-
   map("n", "gD", vim.lsp.buf.declaration, opts "Go to declaration")
   map("n", "gd", vim.lsp.buf.definition, opts "Go to definition")
   map("n", "gi", vim.lsp.buf.implementation, opts "Go to implementation")
@@ -42,10 +38,10 @@ M.on_attach = function(_, bufnr)
   -- end
 end
 
--- M.toggle_inlay_hints = function()
---   local bufnr = vim.api.nvim_get_current_buf()
---   vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr }, { bufnr })
--- end
+M.toggle_inlay_hints = function()
+  local bufnr = vim.api.nvim_get_current_buf()
+  vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr }, { bufnr })
+end
 
 M.on_init = function(client, _)
   if client.supports_method "textDocument/semanticTokens" then
@@ -58,6 +54,8 @@ M.capabilities = vim.tbl_deep_extend(
   vim.lsp.protocol.make_client_capabilities(),
   require("cmp_nvim_lsp").default_capabilities()
 )
+
+M.capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 M.capabilities.textDocument.completion.completionItem = {
   documentationFormat = { "markdown", "plaintext" },
