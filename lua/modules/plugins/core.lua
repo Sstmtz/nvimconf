@@ -232,8 +232,4 @@ Core["LunarVim/bigfile.nvim"] = {
   cond = require("global.settings").load_big_files_faster,
 }
 
-Core["nvim-neorocks/rocks.nvim"] = {
-  event = "VeryLazy",
-}
-
 return Core

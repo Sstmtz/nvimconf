@@ -9,6 +9,10 @@ settings["use_copilot"] = false
 ---@type boolean
 settings["enable_nvchad"] = true
 
+--- change the default packer plugin manager
+---@type "lazy" | "rocks"
+settings["packer"] = "lazy"
+
 -- Set it to true if your terminal has transparent background.
 ---@type boolean
 settings["transparent_background"] = false

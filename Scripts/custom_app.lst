@@ -4,6 +4,7 @@
 # git 
 # npm 
 # tar 
+# unzip
 
 # -----------------------------------------------------------
 # glow                    # build-in markdown preview
@@ -13,5 +14,6 @@
 # eza                     # better ls 
 # fzf                     # a command-line fuzzy finder
 # zoxide                  # A smarter cd command 
-
+# fd 
+# jq 
 # ----------------------------------------------------------- 
