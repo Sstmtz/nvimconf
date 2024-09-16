@@ -2,69 +2,69 @@ local Code = {}
 
 -- lspsaga
 Code["nvimdev/lspsaga.nvim"] = {
-  event = "LspAttach",
-  ft = { "c", "cpp", "lua", "rust", "go", "python", "java", "typescript", "javascript" },
-  config = require "code.lspsaga",
-  dependencies = {
-    "nvim-treesitter/nvim-treesitter", -- optional
-    "nvim-tree/nvim-web-devicons", -- optional
-  },
+    event = "LspAttach",
+    ft = { "c", "cpp", "lua", "rust", "go", "python", "java", "typescript", "javascript" },
+    config = require "code.lspsaga",
+    dependencies = {
+        "nvim-treesitter/nvim-treesitter", -- optional
+        "nvim-tree/nvim-web-devicons", -- optional
+    },
 }
 
 -- lsp_signature
 Code["ray-x/lsp_signature.nvim"] = {
-  config = require "code.lsp-signature",
+    config = require "code.lsp-signature",
 }
 
 -- glance
 Code["dnlhc/glance.nvim"] = {
-  event = "LspAttach",
-  config = require "code.glance",
+    event = "LspAttach",
+    config = require "code.glance",
 }
 
 -- crates
 Code["Saecki/crates.nvim"] = {
-  event = "BufReadPost Cargo.toml",
-  ft = { "toml" },
-  dependencies = { "nvim-lua/plenary.nvim" },
-  opts = {
-    completion = {
-      cmp = { enabled = true },
+    event = "BufReadPost Cargo.toml",
+    ft = { "toml" },
+    dependencies = { "nvim-lua/plenary.nvim" },
+    opts = {
+        completion = {
+            cmp = { enabled = true },
+        },
     },
-  },
-  config = require "code.crates",
+    config = require "code.crates",
 }
 
 -- rustaceanvim
 Code["mrcjkb/rustaceanvim"] = {
-  version = "^4",
-  lazy = false,
-  ft = { "rust" },
-  dependencies = { "nvim-lua/plenary.nvim" },
-  config = require "code.rustaceanvim",
+    version = "^4",
+    lazy = false,
+    ft = { "rust" },
+    dependencies = { "nvim-lua/plenary.nvim" },
+    config = require "code.rustaceanvim",
 }
 
 -- refactoring
 Code["ThePrimeagen/refactoring.nvim"] = {
-  event = { "BufReadPre", "BufNewFile" },
-  dependencies = {
-    "nvim-lua/plenary.nvim",
-    "nvim-treesitter/nvim-treesitter",
-  },
+    event = { "BufReadPre", "BufNewFile" },
+    dependencies = {
+        "nvim-lua/plenary.nvim",
+        "nvim-treesitter/nvim-treesitter",
+    },
 }
 
 -- clangd_extensions
 Code["p00f/clangd_extensions.nvim"] = {
-  config = require "code.clangd_extensions",
+    config = require "code.clangd_extensions",
 }
 
 -- neotest
 Code["nvim-neotest/neotest"] = {
-  config = require "code.neotest",
-  dependencies = {
-    "fredrikaverpil/neotest-golang",
-    "nvim-neotest/neotest-python",
-  },
+    config = require "code.neotest",
+    dependencies = {
+        "fredrikaverpil/neotest-golang",
+        "nvim-neotest/neotest-python",
+    },
   -- stylua: ignore
   keys = {
     {"<leader>t", "", desc = "+test"},
@@ -82,42 +82,42 @@ Code["nvim-neotest/neotest"] = {
 
 -- SchemaStore
 Code["b0o/SchemaStore.nvim"] = {
-  lazy = true,
-  version = false, -- last release is way too old
+    lazy = true,
+    version = false, -- last release is way too old
 }
 
 -- venv-selector
 Code["linux-cultist/venv-selector.nvim"] = {
-  branch = "regexp", -- Use this branch for the new version
-  cmd = "VenvSelect",
-  enabled = true,
-  opts = {
-    settings = {
-      options = {
-        notify_user_on_venv_activation = true,
-      },
+    branch = "regexp", -- Use this branch for the new version
+    cmd = "VenvSelect",
+    enabled = true,
+    opts = {
+        settings = {
+            options = {
+                notify_user_on_venv_activation = true,
+            },
+        },
     },
-  },
-  --  Call config for python files and load the cached venv automatically
-  ft = "python",
-  keys = { { "<leader>cv", "<cmd>:VenvSelect<cr>", desc = "Select VirtualEnv", ft = "python" } },
+    --  Call config for python files and load the cached venv automatically
+    ft = "python",
+    keys = { { "<leader>cv", "<cmd>:VenvSelect<cr>", desc = "Select VirtualEnv", ft = "python" } },
 }
 
 -- sniprun
 Code["michaelb/sniprun"] = {
-  branch = "master",
-  build = "sh install.sh",
-  config = function()
-    require("sniprun").setup {}
-  end,
+    branch = "master",
+    build = "sh install.sh",
+    config = function()
+        require("sniprun").setup {}
+    end,
 }
 
 -- navigator
 Code["ray-x/navigator.lua"] = {
-  dependencies = {
-    { "ray-x/guihua.lua", build = "cd lua/fzy && make" },
-  },
-  config = require "code.navigator",
+    dependencies = {
+        { "ray-x/guihua.lua", build = "cd lua/fzy && make" },
+    },
+    config = require "code.navigator",
 }
 
 return Code

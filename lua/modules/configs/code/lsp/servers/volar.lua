@@ -1,7 +1,7 @@
 return {
-  init_options = {
-    vue = {
-      hybridMode = true,
+    init_options = {
+        vue = {
+            hybridMode = true,
+        },
     },
-  },
 }

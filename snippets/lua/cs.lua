@@ -13,23 +13,23 @@ local fmt = require("luasnip.extras.fmt").fmt
 
 -- 按A-n进行循环枚举选择
 vim.keymap.set({ "i", "s" }, "<A-n>", function()
-  if ls.choice_active() then
-    ls.change_choice(1)
-  end
+    if ls.choice_active() then
+        ls.change_choice(1)
+    end
 end)
 
 ls.add_snippets("cs", {
-  snip(
-    "logc",
-    fmt([[Debug.Log($"<color={}>{}</color>");]], {
-      choice(1, {
-        text "red",
-        text "green",
-        text "blue",
-        text "cyan",
-        text "magenta",
-      }),
-      insert(2),
-    })
-  ),
+    snip(
+        "logc",
+        fmt([[Debug.Log($"<color={}>{}</color>");]], {
+            choice(1, {
+                text "red",
+                text "green",
+                text "blue",
+                text "cyan",
+                text "magenta",
+            }),
+            insert(2),
+        })
+    ),
 })
