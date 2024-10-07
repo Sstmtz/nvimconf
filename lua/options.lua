@@ -5,7 +5,7 @@ end
 
 -- add yours here!
 
-vim.g.toggle_theme_icon = "   "
+-- vim.g.toggle_theme_icon = "   "
 
 -- tab & indenting
 vim.opt.tabstop = 4

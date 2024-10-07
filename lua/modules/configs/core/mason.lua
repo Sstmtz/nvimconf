@@ -12,9 +12,9 @@ M.setup = function()
         ui = {
             border = "single",
             icons = {
-                package_pending = icons.ui.Modified_alt,
-                package_installed = icons.ui.Check,
-                package_uninstalled = icons.misc.Ghost,
+                package_pending = icons.ui.Pending,
+                package_installed = icons.ui.Installed,
+                package_uninstalled = icons.ui.Uninstalled,
             },
             keymaps = {
                 toggle_server_expand = "<CR>",

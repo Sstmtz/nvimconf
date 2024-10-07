@@ -139,6 +139,7 @@ function Lazy:install_plugins()
     -- set "mapleader" and "maplocalleader" before loading lazy.nvim
     vim.g.mapleader = " "
     vim.g.maplocalleader = "\\"
+
     -- if you're ready to install "NvChad", make sure set the global variable
     if settings.enable_nvchad then
         vim.g.base46_cache = vim.fn.stdpath "data" .. "/nvchad/base46/"
@@ -150,6 +151,7 @@ function Lazy:install_plugins()
         {
             "NvChad/NvChad",
             lazy = false,
+            branch = "v2.5",
             enabled = settings.enable_nvchad,
             import = "nvchad.plugins",
             config = function()

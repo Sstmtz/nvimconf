@@ -167,14 +167,16 @@ Core["hrsh7th/nvim-cmp"] = {
             "hrsh7th/cmp-buffer",
             "hrsh7th/cmp-path",
             "petertriho/cmp-git",
+            "lukas-reineke/cmp-under-comparator",
+            "lukas-reineke/cmp-rg",
         },
     },
     opts = function()
         return require "core.cmp"
     end,
-    config = function(_, opts)
-        require("cmp").setup(opts)
-    end,
+    -- config = function(_, opts)
+    --     require("cmp").setup(opts)
+    -- end,
 }
 
 -- cmp-tabnine

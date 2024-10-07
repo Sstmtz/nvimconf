@@ -1,11 +1,16 @@
+local settings = require "global.settings"
+
 return function()
+    if settings.enable_nvchad then
+        dofile(vim.g.base46_cache .. "git")
+    end
     require("gitsigns").setup {
         signs = {
             add = { text = "│" },
             change = { text = "│" },
             delete = { text = "󰍵" },
+            changedelete = { text = "󱕖" },
             topdelete = { text = "‾" },
-            changedelete = { text = "~" },
             untracked = { text = "│" },
         },
         on_attach = nil,

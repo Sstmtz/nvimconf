@@ -344,7 +344,7 @@ Tools["kylechui/nvim-surround"] = {
 
 ------------------------------------------------------------------------------------------Search & Replace------------------------------------------------------------------------------------
 
--- nvim-spectre
+-- nvim-spectre [no use]
 Tools["nvim-pack/nvim-spectre"] = {
     build = false,
     cmd = "Spectre",

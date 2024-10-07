@@ -163,6 +163,9 @@ local data = {
         Table = "",
         Telescope = "",
         Window = "",
+        Pending = " ",
+        Installed = " ",
+        Uninstalled = " ",
     },
     diagnostics = {
         Error = "",
