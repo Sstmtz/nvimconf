@@ -68,5 +68,5 @@ Core["nvimtools/none-ls.nvim"] = {
     },
 }
 
-return Core
+return Core -- as a return table
 ```

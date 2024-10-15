@@ -78,6 +78,7 @@ UI["stevearc/aerial.nvim"] = {
 -- lspkind
 UI["onsails/lspkind.nvim"] = {
     config = require "ui.lspkind",
+    enabled = settings.completion_system == "nvim-cmp", -- it means if you use blinkcmp, you should disable this, see details: blinkcmp#17
 }
 
 -- UI["goolord/alpha-nvim"] = {

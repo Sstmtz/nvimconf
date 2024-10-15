@@ -125,6 +125,7 @@ Core["nvimtools/none-ls.nvim"] = {
 -- nvim-cmp
 Core["hrsh7th/nvim-cmp"] = {
     event = "InsertEnter",
+    enabled = settings.completion_system == "nvim-cmp",
     dependencies = {
         -- snippet plugin
         {
@@ -192,6 +193,15 @@ Core["tzachar/cmp-tabnine"] = {
     config = function(_, opts)
         require("cmp_tabnine.config"):setup(opts)
     end,
+}
+
+Core["saghen/blink.cmp"] = {
+    -- lazy = false, -- lazy loading handled internally
+    event = "InsertEnter",
+    dependencies = "rafamadriz/friendly-snippets",
+    version = "v0.*",
+    opts = require "core.blinkcmp",
+    enabled = settings.completion_system == "blinkcmp",
 }
 
 -- nvim-dap

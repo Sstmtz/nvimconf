@@ -14,6 +14,10 @@ vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.opt.smartindent = true
 
+-- line numbers
+vim.opt.number = true
+vim.opt.relativenumber = true
+
 -- [plugin] luasnip
 -- vim.g.vscode_snippets_exclude = vim.fn.stdpath "config" .. "/snippets/vscode/"
 -- vim.g.vscode_snippets_path = vim.fn.stdpath "config" .. "/snippets/vscode"

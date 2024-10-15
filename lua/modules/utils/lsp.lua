@@ -1,6 +1,7 @@
 local M = {}
 
 local map = vim.keymap.set
+local settings = require "global.settings"
 -- local conf = require("nvconfig").ui.lsp
 
 M.on_attach = function(_, bufnr)
@@ -53,11 +54,13 @@ M.on_init = function(client, _)
     end
 end
 
-M.capabilities = vim.tbl_deep_extend(
-    "force",
-    vim.lsp.protocol.make_client_capabilities(),
-    require("cmp_nvim_lsp").default_capabilities()
-)
+M.capabilities = settings.completion_system == "nvim-cmp"
+        and vim.tbl_deep_extend(
+            "force",
+            vim.lsp.protocol.make_client_capabilities(),
+            require("cmp_nvim_lsp").default_capabilities()
+        )
+    or vim.lsp.protocol.make_client_capabilities()
 
 M.capabilities.textDocument.completion.completionItem.snippetSupport = true
 

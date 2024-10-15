@@ -69,7 +69,7 @@ return function()
             },
         },
         symbol_in_winbar = {
-            enable = true,
+            enable = false, -- replaced by dropbar.nvim
             separator = "/",
             ignore_patterns = {},
             hide_keyword = true,

@@ -120,4 +120,12 @@ Code["ray-x/navigator.lua"] = {
     config = require "code.navigator",
 }
 
+-- dropbar
+Code["Bekaboo/dropbar.nvim"] = {
+    -- optional, but required for fuzzy finder support
+    dependencies = {
+        "nvim-telescope/telescope-fzf-native.nvim",
+    },
+}
+
 return Code

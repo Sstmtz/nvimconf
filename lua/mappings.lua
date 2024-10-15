@@ -2,13 +2,12 @@ local settings = require "global.settings"
 if settings.enable_nvchad then
     require "nvchad.mappings"
 end
--- add yours here
 
 local map = vim.keymap.set
 
 -- general
 map("n", ";", ":", { desc = "CMD enter command mode" })
-map("i", "jk", "<ESC>")
+map("i", "jk", "<ESC>", { desc = "Escape" })
 
 -- neo-tree/nvim-tree
 -- map("n", "<C-n>", "<cmd>NvimTreeToggle<cr>", { desc = "Toggle file explorer" })

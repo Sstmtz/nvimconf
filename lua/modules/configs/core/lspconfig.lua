@@ -1,11 +1,14 @@
 return function()
     local nvim_lsp = require "lspconfig"
+    local settings = require "global.settings"
     require("code.neoconf").setup()
     require("core.mason").setup()
     require("mason.mason-lspconfig").setup()
 
     local opts = {
-        capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities()),
+        capabilities = settings.completion_system == "nvim-cmp" and require("cmp_nvim_lsp").default_capabilities(
+            vim.lsp.protocol.make_client_capabilities()
+        ) or vim.lsp.protocol.make_client_capabilities(),
         on_init = function(client, _)
             if client.supports_method "textDocument/semanticTokens" then
                 client.server_capabilities.semanticTokensProvider = nil

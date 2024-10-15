@@ -44,6 +44,10 @@ settings["packer"] = "lazy"
 ---@type "neo-tree" | "nvim-tree"
 settings["file_tree"] = "neo-tree"
 
+--- Set the default completion system
+---@type "nvim-cmp" | "blinkcmp"
+settings["completion_system"] = "nvim-cmp"
+
 -- Set it to true if your terminal has transparent background.
 ---@type boolean
 settings["transparent_background"] = false
@@ -83,6 +87,9 @@ settings["disabled_plugins"] = {
     "dnlhc/glance.nvim",
     "tzachar/cmp-tabnine",
     "oysandvik94/curl.nvim",
+    "numToStr/Comment.nvim", -- it has been integrated into neovim in 0.10.0
+    -- "hrsh7th/nvim-cmp",
+    "onsails/lspkind.nvim",
 }
 
 ---@type palette[]
