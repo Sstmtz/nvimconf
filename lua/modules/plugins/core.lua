@@ -170,6 +170,7 @@ Core["hrsh7th/nvim-cmp"] = {
             "petertriho/cmp-git",
             "lukas-reineke/cmp-under-comparator",
             "lukas-reineke/cmp-rg",
+            -- "hrsh7th/cmp-nvim-lsp-signature-help",
         },
     },
     opts = function()
@@ -181,20 +182,21 @@ Core["hrsh7th/nvim-cmp"] = {
 }
 
 -- cmp-tabnine
-Core["tzachar/cmp-tabnine"] = {
-    after = "nvim-cmp",
-    build = { "./install.sh" },
-    -- dependencies = "hrsh7th/nvim-cmp",
-    opts = {
-        max_lines = 1000,
-        max_num_results = 3,
-        sort = true,
-    },
-    config = function(_, opts)
-        require("cmp_tabnine.config"):setup(opts)
-    end,
-}
+-- Core["tzachar/cmp-tabnine"] = {
+--     after = "nvim-cmp",
+--     build = { "./install.sh" },
+--     -- dependencies = "hrsh7th/nvim-cmp",
+--     opts = {
+--         max_lines = 1000,
+--         max_num_results = 3,
+--         sort = true,
+--     },
+--     config = function(_, opts)
+--         require("cmp_tabnine.config"):setup(opts)
+--     end,
+-- }
 
+-- blickcmp
 Core["saghen/blink.cmp"] = {
     -- lazy = false, -- lazy loading handled internally
     event = "InsertEnter",

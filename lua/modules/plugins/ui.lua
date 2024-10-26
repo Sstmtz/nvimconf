@@ -65,22 +65,23 @@ UI["stevearc/dressing.nvim"] = {
 }
 
 -- aerial
-UI["stevearc/aerial.nvim"] = {
-    event = "VeryLazy",
-    -- Optional dependencies
-    dependencies = {
-        "nvim-treesitter/nvim-treesitter",
-        "nvim-tree/nvim-web-devicons",
-    },
-    config = require "ui.aerial",
-}
+-- UI["stevearc/aerial.nvim"] = {
+--     event = "VeryLazy",
+--     -- Optional dependencies
+--     dependencies = {
+--         "nvim-treesitter/nvim-treesitter",
+--         "nvim-tree/nvim-web-devicons",
+--     },
+--     config = require "ui.aerial",
+-- }
 
 -- lspkind
-UI["onsails/lspkind.nvim"] = {
-    config = require "ui.lspkind",
-    enabled = settings.completion_system == "nvim-cmp", -- it means if you use blinkcmp, you should disable this, see details: blinkcmp#17
-}
+-- UI["onsails/lspkind.nvim"] = {
+--     config = require "ui.lspkind",
+--     enabled = settings.completion_system == "nvim-cmp", -- it means if you use blinkcmp, you should disable this, see details: blinkcmp#17
+-- }
 
+-- alpha
 -- UI["goolord/alpha-nvim"] = {
 --   lazy = true,
 --   event = "BufWinEnter",
@@ -108,34 +109,35 @@ UI["zbirenbaum/neodim"] = {
 }
 
 -- headlines
-UI["lukas-reineke/headlines.nvim"] = {
-    opts = require "ui.headlines",
-    ft = { "markdown", "norg", "rmd", "org" },
-    config = function(_, opts)
-        -- PERF: schedule to prevent headlines slowing down opening a file
-        vim.schedule(function()
-            require("headlines").setup(opts)
-            require("headlines").refresh()
-        end)
-    end,
-}
+-- UI["lukas-reineke/headlines.nvim"] = {
+--     opts = require "ui.headlines",
+--     ft = { "markdown", "norg", "rmd", "org" },
+--     config = function(_, opts)
+--         -- PERF: schedule to prevent headlines slowing down opening a file
+--         vim.schedule(function()
+--             require("headlines").setup(opts)
+--             require("headlines").refresh()
+--         end)
+--     end,
+-- }
 
 -- edgy: easily create and manage predefined window layouts, bringing a new edge to your workflow.
-if settings.file_tree == "neo-tree" then
-    UI["folke/edgy.nvim"] = {
-        event = "VeryLazy",
-        init = function()
-            vim.opt.laststatus = 3
-            vim.opt.splitkeep = "screen"
-        end,
-        opts = require "ui.edgy",
-        keys = {
-      -- stylua: ignore
-      { "<leader>uE", function() require("edgy").select() end, desc = "Edgy Select Window" },
-        },
-    }
-end
+-- if settings.file_tree == "neo-tree" then
+--     UI["folke/edgy.nvim"] = {
+--         event = "VeryLazy",
+--         init = function()
+--             vim.opt.laststatus = 3
+--             vim.opt.splitkeep = "screen"
+--         end,
+--         opts = require "ui.edgy",
+--         keys = {
+--       -- stylua: ignore
+--       { "<leader>uE", function() require("edgy").select() end, desc = "Edgy Select Window" },
+--         },
+--     }
+-- end
 
+-- nvim-scrollbar
 -- UI["petertriho/nvim-scrollbar"] = {
 --   config = function()
 --     require("hlslens").setup {
@@ -149,6 +151,7 @@ end
 --   },
 -- }
 
+-- fidget
 UI["j-hui/fidget.nvim"] = {}
 
 return UI

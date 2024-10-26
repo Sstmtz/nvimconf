@@ -16,12 +16,18 @@ vim.opt.smartindent = true
 
 -- line numbers
 vim.opt.number = true
-vim.opt.relativenumber = true
+-- vim.opt.relativenumber = true
+
+-- system clipboard
+vim.opt.clipboard = "unnamedplus"
 
 -- [plugin] luasnip
 -- vim.g.vscode_snippets_exclude = vim.fn.stdpath "config" .. "/snippets/vscode/"
 -- vim.g.vscode_snippets_path = vim.fn.stdpath "config" .. "/snippets/vscode"
 -- vim.g.lua_snippets_path = vim.fn.stdpath "config" .. "/snippets/lua"
+
+-- [plugin] codeium
+vim.g.codeium_no_map_tab = true -- disable tab auto-completion
 
 vim.g.netrw_liststyle = 3
 vim.opt.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"

@@ -6,8 +6,10 @@ return function()
     require("mason.mason-lspconfig").setup()
 
     local opts = {
-        capabilities = settings.completion_system == "nvim-cmp" and require("cmp_nvim_lsp").default_capabilities(
-            vim.lsp.protocol.make_client_capabilities()
+        capabilities = settings.completion_system == "nvim-cmp" and vim.tbl_deep_extend(
+            "force",
+            vim.lsp.protocol.make_client_capabilities(),
+            require("cmp_nvim_lsp").default_capabilities()
         ) or vim.lsp.protocol.make_client_capabilities(),
         on_init = function(client, _)
             if client.supports_method "textDocument/semanticTokens" then

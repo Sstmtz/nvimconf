@@ -1,15 +1,15 @@
 local Code = {}
 
 -- lspsaga
-Code["nvimdev/lspsaga.nvim"] = {
-    event = "LspAttach",
-    ft = { "c", "cpp", "lua", "rust", "go", "python", "java", "typescript", "javascript" },
-    config = require "code.lspsaga",
-    dependencies = {
-        "nvim-treesitter/nvim-treesitter", -- optional
-        "nvim-tree/nvim-web-devicons", -- optional
-    },
-}
+-- Code["nvimdev/lspsaga.nvim"] = {
+--     event = "LspAttach",
+--     ft = { "c", "cpp", "lua", "rust", "go", "python", "java", "typescript", "javascript" },
+--     config = require "code.lspsaga",
+--     dependencies = {
+--         "nvim-treesitter/nvim-treesitter", -- optional
+--         "nvim-tree/nvim-web-devicons", -- optional
+--     },
+-- }
 
 -- lsp_signature
 Code["ray-x/lsp_signature.nvim"] = {
@@ -17,10 +17,10 @@ Code["ray-x/lsp_signature.nvim"] = {
 }
 
 -- glance
-Code["dnlhc/glance.nvim"] = {
-    event = "LspAttach",
-    config = require "code.glance",
-}
+-- Code["dnlhc/glance.nvim"] = {
+--     event = "LspAttach",
+--     config = require "code.glance",
+-- }
 
 -- crates
 Code["Saecki/crates.nvim"] = {
@@ -113,12 +113,12 @@ Code["michaelb/sniprun"] = {
 }
 
 -- navigator
-Code["ray-x/navigator.lua"] = {
-    dependencies = {
-        { "ray-x/guihua.lua", build = "cd lua/fzy && make" },
-    },
-    config = require "code.navigator",
-}
+-- Code["ray-x/navigator.lua"] = {
+--     dependencies = {
+--         { "ray-x/guihua.lua", build = "cd lua/fzy && make" },
+--     },
+--     config = require "code.navigator",
+-- }
 
 -- dropbar
 Code["Bekaboo/dropbar.nvim"] = {

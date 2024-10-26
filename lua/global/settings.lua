@@ -87,9 +87,14 @@ settings["disabled_plugins"] = {
     "dnlhc/glance.nvim",
     "tzachar/cmp-tabnine",
     "oysandvik94/curl.nvim",
-    "numToStr/Comment.nvim", -- it has been integrated into neovim in 0.10.0
+    -- "numToStr/Comment.nvim", -- it has been integrated into neovim in 0.10.0
     -- "hrsh7th/nvim-cmp",
     "onsails/lspkind.nvim",
+    "nvimdev/lspsaga.nvim",
+    "folke/edgy.nvim",
+    "ThePrimeagen/harpoon",
+    "rmagatti/auto-session",
+    "olimorris/persisted.nvim",
 }
 
 ---@type palette[]
@@ -185,20 +190,21 @@ settings["treesitter_deps"] = {
     "vimdoc",
     "printf",
     "bash",
-    -- C/C++
+    "asm",
+    ------------ C/C++
     "c",
     "cpp",
     "cmake",
     "ninja",
-    -- Go
+    -------------Go
     "go",
     "gomod",
     "gowork",
     "gosum",
-    -- Python
+    ------------ Python
     "python",
     "rst",
-    -- Rust
+    ------------ Rust
     "rust",
     "ron",
     -- "java",
@@ -215,16 +221,16 @@ settings["treesitter_deps"] = {
     "javascript",
     "typescript",
     "yaml",
-    -- Git
+    ----------- Git
     "git_config",
     "gitcommit",
     "git_rebase",
     "gitignore",
     "gitattributes",
-    -- http
+    ----------  http
     "http",
     "graphql",
-    -- flutter
+    ----------- flutter
     "dart",
 }
 

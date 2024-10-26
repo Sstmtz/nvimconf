@@ -15,9 +15,13 @@ AI["zbirenbaum/copilot.lua"] = {
 -- codeium
 AI["Exafunction/codeium.vim"] = {
     event = "BufEnter",
-    keys = {},
+    -- dependencies = {
+    --     "nvim-lua/plenary.nvim",
+    --     "hrsh7th/nvim-cmp",
+    -- },
 }
 
+-- CopilotChat
 AI["CopilotC-Nvim/CopilotChat.nvim"] = {
     branch = "canary",
     dependencies = {

@@ -1,23 +1,31 @@
-# ----------------------------------------------------------- 
+# -----------------------------------------------------------
 # wget
 # curl
-# git 
-# npm 
-# tar 
+# git
+# npm
+# tar
 # unzip
-# cmake 
-# ninja 
-# make 
+# cmake
+# ninja
+# make
+# nvm
 # -----------------------------------------------------------
 # glow                    # build-in markdown preview
 # yazi                    # build-in file manager
-# bat                     # better cat 
+# bat                     # better cat
 # ripgrep                 # better grep
-# eza                     # better ls 
-# zoxide                  # better cd  
+# eza                     # better ls
+# zoxide                  # better cd
 # fzf                     # a command-line fuzzy finder
-# fd 
-# jq 
-# ----------------------------------------------------------- 
+# fd
+# jq
 # tmux
-# 
+# -----------------------------------------------------------
+#
+# glow                    # glow.nvim needs
+# yazi                    # yazi.nvim needs
+# lazydocker              # lazydocker.nvim needs
+# lazygit                 # lazygit.nvim needs
+# git-delta               # lazygit.nvim needs
+# fzf                     # mostly needs
+# ripgrep                 # mostly needs

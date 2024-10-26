@@ -29,7 +29,7 @@ opts = {
                 return vim.bo[buf].buftype == "help"
             end,
         },
-        { ft = "spectre_panel", size = { height = 0.4 } },
+        -- { ft = "spectre_panel", size = { height = 0.4 } },
     },
     left = {
         -- Neo-tree filesystem always takes half the screen height

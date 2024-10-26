@@ -21,6 +21,7 @@ M.setup = function()
         update_in_insert = false,
     })
 
+    -- lspconfig opts
     local opts = {
         capabilities = require("modules.utils.lsp").capabilities,
         on_attach = require("modules.utils.lsp").on_attach,
@@ -30,23 +31,6 @@ M.setup = function()
     ---A handler to setup all servers defined under `lsp/servers/*.lua`
     ---@param lsp_name string
     local function mason_lsp_handler(lsp_name)
-        -- rust_analyzer is configured using mrcjkb/rustaceanvim
-        -- warn users if they have set it up manually
-        if lsp_name == "rust_analyzer" then
-            local config_exist = pcall(require, "completion.servers." .. lsp_name)
-            if config_exist then
-                vim.notify(
-                    [[
-`rust_analyzer` is configured independently via `mrcjkb/rustaceanvim`. To get rid of this warning,
-please REMOVE your LSP configuration (rust_analyzer.lua) from the `servers` directory and configure
-`rust_analyzer` using the appropriate init options provided by `rustaceanvim` instead.]],
-                    vim.log.levels.WARN,
-                    { title = "nvim-lspconfig" }
-                )
-            end
-            return
-        end
-
         -- Use preset if there is no user definition
         local ok, custom_handler = pcall(require, "code.lsp.servers." .. lsp_name)
         if not ok then
@@ -54,7 +38,6 @@ please REMOVE your LSP configuration (rust_analyzer.lua) from the `servers` dire
             nvim_lsp[lsp_name].setup(opts)
             return
         elseif type(custom_handler) == "function" then
-            --- See `clangd.lua` for example.
             custom_handler(opts)
         elseif type(custom_handler) == "table" then
             nvim_lsp[lsp_name].setup(vim.tbl_deep_extend("force", opts, custom_handler))

@@ -15,7 +15,7 @@ return function()
             sign_priority = 40,
             virtual_text = true,
         },
-        ui = {
+        ui = { -- windows ui
             border = "rounded",
             devicon = true,
             foldericon = true,
@@ -43,7 +43,13 @@ return function()
             layout = "float",
             silent = false,
         },
-        code_action = {
+        definition = { -- vim.lsp.buf.definition()
+            enable = false,
+            keys = {
+                edit = "o",
+            },
+        },
+        code_action = { -- vim.lsp.buf.code_action()
             num_showcut = true,
             show_server_name = false,
             keys = {
@@ -58,7 +64,9 @@ return function()
             confirm = "<CR>",
             in_select = true,
         },
-        hover = {
+        hover = { -- vim.lsp.buf.hover()
+            -- don't use the hover, it uses high cpu
+            enable = false,
             max_width = 0.6,
             max_height = 0.4,
             auto_preview = false,

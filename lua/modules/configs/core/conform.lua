@@ -8,6 +8,7 @@ return function()
             go = { "goimports", "gofumpt" },
             cpp = { "clang-format" },
             markdown = { "prettier", "markdownlint-cli2", "markdown-toc" },
+            asm = { "asmfmt" },
         },
 
         format_on_save = {

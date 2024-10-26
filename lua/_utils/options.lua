@@ -6,7 +6,7 @@ vim.opt.expandtab = true
 
 -- line numbers
 vim.opt.number = true
-vim.opt.relativenumber = true
+-- vim.opt.relativenumber = true
 
 -- [plugin] luasnip
 vim.g.vscode_snippets_exclude = vim.fn.stdpath "config" .. "/snippets/vscode/"

@@ -19,7 +19,7 @@ return function()
             diagnostic_head_severity_1 = "🈲",
             fold = {
                 prefix = "⚡", -- icon to show before the folding need to be 2 spaces in display width
-                separator = "", -- e.g. shows   3 lines 
+                separator = "", -- e.g. shows 3 lines
             },
         },
 

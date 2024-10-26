@@ -25,10 +25,14 @@ Tools["kdheepak/lazygit.nvim"] = {
 
 -- lazydocker
 Tools["crnvl96/lazydocker.nvim"] = {
+    lazy = true,
     event = "VeryLazy",
     opts = {}, -- automatically calls `require("lazydocker").setup()`
     dependencies = {
         "MunifTanjim/nui.nvim",
+    },
+    keys = {
+        { "<leader>ld", "<cmd>LazyDocker<cr>", desc = "Open lazy docker" },
     },
 }
 
@@ -37,11 +41,11 @@ Tools["NeogitOrg/neogit"] = {
     event = "VeryLazy",
     dependencies = {
         "nvim-lua/plenary.nvim", -- required
-        "sindrets/diffview.nvim", -- optional - Diff integration
+        -- "sindrets/diffview.nvim", -- optional - Diff integration
 
         -- Only one of these is needed, not both.
-        "nvim-telescope/telescope.nvim", -- optional
-        "ibhagwan/fzf-lua", -- optional
+        -- "nvim-telescope/telescope.nvim", -- optional
+        -- "ibhagwan/fzf-lua", -- optional
     },
     config = true,
 }
@@ -71,6 +75,7 @@ Tools["mikavilpas/yazi.nvim"] = {
 Tools["ellisonleao/glow.nvim"] = {
     config = true,
     cmd = "Glow",
+    ft = { "markdown" },
 }
 
 -- markdown-preview
@@ -165,11 +170,20 @@ Tools["folke/flash.nvim"] = {
 }
 
 -- neoscroll
-Tools["karb94/neoscroll.nvim"] = {
-    config = require "tools.neoscroll",
-}
+-- Tools["karb94/neoscroll.nvim"] = {
+--     config = require "tools.neoscroll",
+-- }
 
 ----------------------------------------------------------------------------------------Code Tools--------------------------------------------------------------------------------------------
+
+-- -- curl
+-- Tools["oysandvik94/curl.nvim"] = {
+--     cmd = { "CurlOpen" },
+--     dependencies = {
+--         "nvim-lua/plenary.nvim",
+--     },
+--     config = true,
+-- }
 
 -- rest
 Tools["rest-nvim/rest.nvim"] = {
@@ -188,15 +202,6 @@ Tools["mistweaverco/kulala.nvim"] = {
         { "<leader>Rn", "<cmd>lua require('kulala').jump_next()<cr>", desc = "Jump to next request" },
     },
     opts = {},
-}
-
--- curl
-Tools["oysandvik94/curl.nvim"] = {
-    cmd = { "CurlOpen" },
-    dependencies = {
-        "nvim-lua/plenary.nvim",
-    },
-    config = true,
 }
 
 -- cmake-tools
@@ -248,24 +253,24 @@ Tools["folke/persistence.nvim"] = {
 }
 
 -- auto-session
-Tools["rmagatti/auto-session"] = {
-    -- lazy = false,
-    dependencies = {
-        "nvim-telescope/telescope.nvim", -- Only needed if you want to use session lens
-    },
-    opts = {
-        auto_session_suppress_dirs = { "~/Projects", "~/Downloads" },
-        -- log_level = 'debug',
-    },
-    enabled = settings.use_autosession,
-}
+-- Tools["rmagatti/auto-session"] = {
+--     -- lazy = false,
+--     dependencies = {
+--         "nvim-telescope/telescope.nvim", -- Only needed if you want to use session lens
+--     },
+--     opts = {
+--         auto_session_suppress_dirs = { "~/Projects", "~/Downloads" },
+--         -- log_level = 'debug',
+--     },
+--     enabled = settings.use_autosession,
+-- }
 
 -- persisted
-Tools["olimorris/persisted.nvim"] = {
-    lazy = true, -- if you use a dashboard
-    config = require "tools.persisted",
-    enabled = settings.use_autosession,
-}
+-- Tools["olimorris/persisted.nvim"] = {
+--     lazy = true, -- if you use a dashboard
+--     config = require "tools.persisted",
+--     enabled = settings.use_autosession,
+-- }
 
 ------------------------------------------------------------------------------------------Benchmarking----------------------------------------------------------------------------------------
 
@@ -344,22 +349,22 @@ Tools["kylechui/nvim-surround"] = {
 
 ------------------------------------------------------------------------------------------Search & Replace------------------------------------------------------------------------------------
 
--- nvim-spectre [no use]
-Tools["nvim-pack/nvim-spectre"] = {
-    build = false,
-    cmd = "Spectre",
-    opts = { open_cmd = "noswapfile vnew" },
-  -- stylua: ignore
-  keys = {
-    { "<leader>sr", function() require("spectre").open() end, desc = "Replace in Files (Spectre)" },
-  },
-}
+-- nvim-spectre
+-- Tools["nvim-pack/nvim-spectre"] = {
+--     build = false,
+--     cmd = "Spectre",
+--     opts = { open_cmd = "noswapfile vnew" },
+--   -- stylua: ignore
+--   keys = {
+--     { "<leader>sr", function() require("spectre").open() end, desc = "Replace in Files (Spectre)" },
+--   },
+-- }
 
 -- inc_rename
 Tools["smjonas/inc-rename.nvim"] = {
     cmd = "IncRename",
     config = function()
-        require("inc_rename").setup()
+        require("inc_rename").setup {}
     end,
 }
 
@@ -367,23 +372,6 @@ Tools["smjonas/inc-rename.nvim"] = {
 Tools["MagicDuck/grug-far.nvim"] = {
     opts = { headerMaxWidth = 80 },
     cmd = "GrugFar",
-    keys = {
-        {
-            "<leader>sr",
-            function()
-                local grug = require "grug-far"
-                local ext = vim.bo.buftype == "" and vim.fn.expand "%:e"
-                grug.grug_far {
-                    transient = true,
-                    prefills = {
-                        filesFilter = ext and ext ~= "" and "*." .. ext or nil,
-                    },
-                }
-            end,
-            mode = { "n", "v" },
-            desc = "Search and Replace",
-        },
-    },
 }
 
 ----------------------------------------------------------------------------------------Generator-------------------------------------------------------------------------------------------
@@ -418,11 +406,12 @@ Tools["akinsho/toggleterm.nvim"] = {
 }
 
 -- harpoon
-Tools["ThePrimeagen/harpoon"] = {
-    event = "VeryLazy",
-    branch = "harpoon2",
-    dependencies = { "nvim-lua/plenary.nvim" },
-    config = require "tools.harpoon",
-}
+-- Tools["ThePrimeagen/harpoon"] = {
+--     event = "VeryLazy",
+--     lazy = true,
+--     branch = "harpoon2",
+--     dependencies = { "nvim-lua/plenary.nvim" },
+--     config = require "tools.harpoon",
+-- }
 
 return Tools
