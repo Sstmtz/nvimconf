@@ -37,6 +37,13 @@ M.on_attach = function(_, bufnr)
         vim.lsp.buf.typehierarchy "supertypes"
     end, { desc = "List base class hierarchy" })
 
+    -- 开关 Inlay Hint
+    vim.keymap.set({ "v", "n" }, "gsi", function()
+        if vim.lsp.inlay_hint ~= nil then
+            vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+        end
+    end, { desc = "Toggle inlay hint" })
+
     -- map("n", "<leader>ra", function()
     --     require "nvchad.lsp.renamer"()
     -- end, opts "NvRenamer")
